@@ -1,20 +1,14 @@
 # _Hair Salon_
 #### Week 3 C# ASP.NET Core MVC Independent Project at Epicodus, 12.7.2018
 
-### Created By
+## Created By
 * _Tanvi Garg_
 
-### Description
-
+## Description
 * _The owner(user) should be able to add a list of the stylists, and for each stylist, add clients who see that stylist. The stylists work independently, so each client only belongs to a single stylist._
 
-###### User Stories
-* _As a salon employee, user should be able to see a list of all our stylists._
-* _As an employee, user should be able to select a stylist, see their details, and see a list of all clients that belong to that stylist._
-* _As an employee, user should be able add new stylists to the system when they are hired._
-* _As an employee, user should be able to add new clients to a specific stylist. user should not be able to add a client if no stylists have been added._
 
-### Specs
+## Specs
 * _Salon employee should be able to see a list of all the stylists._
 * _Salon employee should be able to select a stylist, see their details, and see a list of all clients that belong to that stylist._
 * _Salon employee should be able add new stylists to the system when they are hired._
@@ -27,7 +21,24 @@
 * _Salon employee should be able to enter client's name into form where employees may search for the client's. It should display a list of all results._
 
 
-### Database Setup
+## Database Setup
+* _From Terminal Command Line, Enter MySQL using `localhost -uroot -proot` and run following commands to setup the Database and its tables_
+
+`CREATE DATABASE tanvi_garg;`
+
+`USE tanvi_garg;`
+
+`SELECT DATABASE();`
+
+`CREATE TABLE stylists (id serial PRIMARY KEY, name VARCHAR (255));`
+
+`CREATE TABLE clients (id serial PRIMARY KEY, name VARCHAR (255), phone VARCHAR (255), stylist_id INT);`
+
+`SHOW TABLES;`
+
+![Visual Of Tables in tanvi_garg DB](/HairSalon/wwwroot/imgs/DBtables.png)
+
+
 
 
 
