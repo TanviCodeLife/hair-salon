@@ -170,6 +170,43 @@ namespace HairSalon.Models
 
     public void Edit(string newName = "", string newPhone = "")
     {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      if (newPhone == "")
+      {
+        cmd.CommandText = @"UPDATE clients SET name = @newName WHERE id = @searchId;";
+        MySqlParameter searchId = new MySqlParameter();
+        cmd.Parameters.AddWithValue("@searchId", this._clientId);
+        MySqlParameter name = new MySqlParameter();
+        cmd.Parameters.AddWithValue("@newName", newName);
+      }
+      else if (newName == "") {
+        cmd.CommandText = @"UPDATE clients SET phone = @clientPhone WHERE id = @searchId;";
+        MySqlParameter searchId = new MySqlParameter();
+        cmd.Parameters.AddWithValue("@searchId", this._clientId);
+        MySqlParameter phone = new MySqlParameter();
+        cmd.Parameters.AddWithValue("@clientPhone", newPhone);
+      }
+      else if (!(newName == "") && !(newPhone == ""))
+      {
+        cmd.CommandText = @"UPDATE clients SET name = @newName, phone = @clientPhone WHERE id = @searchId;";
+        MySqlParameter searchId = new MySqlParameter();
+        cmd.Parameters.AddWithValue("@searchId", this._clientId);
+        MySqlParameter name = new MySqlParameter();
+        cmd.Parameters.AddWithValue("@newName", newName);
+        MySqlParameter phone = new MySqlParameter();
+        cmd.Parameters.AddWithValue("@clientPhone", newPhone);
+      }
+
+        cmd.ExecuteNonQuery();
+      // _description = newDescription;
+
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
     }
 
 

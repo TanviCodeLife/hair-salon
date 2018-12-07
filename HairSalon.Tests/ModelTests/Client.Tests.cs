@@ -226,7 +226,7 @@ namespace HairSalon.Tests
       string newNumber = "949-XXX-XXXX";
 
       //Act
-      testClient1.Edit(newNumber);
+      testClient1.Edit("", newNumber);
       string resultNumber = Client.Find(testClient1.GetClientId()).GetClientPhone();
 
       //Assert
