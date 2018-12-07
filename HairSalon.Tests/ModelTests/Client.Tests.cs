@@ -49,6 +49,20 @@ namespace HairSalon.Tests
       Assert.AreEqual(newClientName, resultName);
     }
 
+    [TestMethod]
+    public void GetClientPhone_ReturnsClientPhoneNumber_String()
+    {
+      //Arrange
+      string clientPhone = "503-XXX-XXXX";
+      Client testClient = new Client("testname", clientPhone, 1);
+
+      //Act
+      string resultPhone = testClient.GetClientPhone();
+
+      //Assert
+      Assert.AreEqual(clientPhone, resultPhone);
+    }
+
 
 
 
