@@ -35,6 +35,11 @@ namespace HairSalon.Models
       return _clientPhone;
     }
 
+    public void SetClientPhone(string newClientPhone)
+    {
+      _clientPhone = newClientPhone;
+    }
+
 
   }
 }
