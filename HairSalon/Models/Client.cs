@@ -40,6 +40,13 @@ namespace HairSalon.Models
       _clientPhone = newClientPhone;
     }
 
+    public static List<Client> GetAll()
+    {
+      Client dummyClient = new Client("dummy client", "503-XXX-XXXX", 1);
+      List<Client> allClients = new List<Client> { dummyClient };
+      return allClients;
+    }
+
 
   }
 }

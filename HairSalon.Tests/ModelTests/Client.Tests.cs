@@ -71,12 +71,25 @@ namespace HairSalon.Tests
       Client testClient = new Client("testname", clientPhone, 1);
 
       //Act
-      string newClientPhone = "test client 2";
+      string newClientPhone = "949-XXX-XXXX";
       testClient.SetClientPhone(newClientPhone);
       string resultPhone = testClient.GetClientPhone();
 
       //Assert
       Assert.AreEqual(newClientPhone, resultPhone);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyClientList_ClientList()
+    {
+      //Arrange
+      List<Client> newList = new List<Client> { };
+
+      //Act
+      List<Client> result = Client.GetAll();
+
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
     }
 
 
