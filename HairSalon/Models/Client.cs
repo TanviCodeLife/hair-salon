@@ -40,34 +40,53 @@ namespace HairSalon.Models
       _clientPhone = newClientPhone;
     }
 
-    public static List<Client> GetAll()
+    public int GetStylistId()
     {
-      List<Client> allClients = new List<Client> {};
-      MySqlConnection conn = DB.Connection();
-      conn.Open();
-      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT * FROM clients;";
-      MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
-      while(rdr.Read())
-      {
-        int clientId = rdr.GetInt32(0);
-        string clientName = rdr.GetString(1);
-        string clientPhone = rdr.GetString(2);
-        int stylistId = rdr.GetInt32(3);
-        Client newClient = new Client(clientName, clientPhone, stylistId, clientId);
-        allClients.Add(newClient);
-      }
-      conn.Close();
-      if (conn != null)
-      {
-        conn.Dispose();
-      }
-
-      return allClients;
+      return 89;
     }
 
-    
+    // public override bool Equals(System.Object otherClient)
+    // {
+    //   if (!(otherClient is Client))
+    //   {
+    //     return false;
+    //   }
+    //   else
+    //   {
+    //     Client newClient = (Client) otherClient;
+    //     bool nameEquality = (this.GetClientName() == newClient.GetClientName());
+    //     bool phoneEquality = this.GetClientPhone() == newClient.GetClientPhone();
+    //     return (nameEquality && phoneEquality);
+    //   }
+
+      public static List<Client> GetAll()
+      {
+        List<Client> allClients = new List<Client> {};
+        MySqlConnection conn = DB.Connection();
+        conn.Open();
+        MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+        cmd.CommandText = @"SELECT * FROM clients;";
+        MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+        while(rdr.Read())
+        {
+          int clientId = rdr.GetInt32(0);
+          string clientName = rdr.GetString(1);
+          string clientPhone = rdr.GetString(2);
+          int stylistId = rdr.GetInt32(3);
+          Client newClient = new Client(clientName, clientPhone, stylistId, clientId);
+          allClients.Add(newClient);
+        }
+        conn.Close();
+        if (conn != null)
+        {
+          conn.Dispose();
+        }
+
+        return allClients;
+      }
 
 
+
+
+    }
   }
-}
