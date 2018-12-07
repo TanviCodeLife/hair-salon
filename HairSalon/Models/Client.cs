@@ -168,6 +168,10 @@ namespace HairSalon.Models
 
     }
 
+    public void Edit(string newName = "", string newPhone = "")
+    {
+    }
+
 
   }
 }
