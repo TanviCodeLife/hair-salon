@@ -18,11 +18,17 @@ _Test Database: first_last_test.sql. Here tanvi_garg_test.sql_
 ### Project Structure
 #### Use Model-View-Controller Structure. Details below -
 
-#### Models:
-Client - Child Class
-Stylist - Parent Class
+1. #### Models :
+_Client - Child Class_
+_Stylist - Parent Class_
+_Location:ProjectName>Models>ClassName.cs_
 
-#Client(Child Class) Methods
+2. #### Model Unit Tests:
+_Create Test for Class Method, fail_
+_Add Class Method function, pass_
+_Test Method Naming Convention: `MethodName_IntendedFunction_OutputType`_ _Location:ProjectName.Tests>ModelTests>ClassNameTests.cs_
+
+3. ##### Client(Child Class) Methods
 Constructor -
 `public ClassName (string clientName, string clientPhone, int stylistId, int id = 0)`
 `{`
@@ -32,15 +38,15 @@ Constructor -
  `_clientId = id;`
  `}`
 
-Getter/Setter Methods -
-* _GetClientName()_
-* _SetClientName()_
-* _GetClientPhone()_
-* _SetClientPhone()_
-* _GetStylistId()_
-Database Manipulation Methods -
-* _Save()_
-* _Edit()_
-* _GetAll()_
-* _Find()_
-* _Delete()_
+4. ##### Getter/Setter Methods -
+ _GetClientName()_ _SetClientName()_
+_GetClientPhone()_
+_SetClientPhone()_
+_GetStylistId()_
+
+5. ##### Database Manipulation Methods -
+_Save()_
+_Edit()_
+_GetAll()_
+_Find()_
+_Delete()_
