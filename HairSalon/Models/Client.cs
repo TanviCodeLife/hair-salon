@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using System;
 using MySql.Data.MySqlClient;
 using HairSalon;
 
@@ -14,10 +14,7 @@ namespace HairSalon.Models
 
     // public Client (string clientName, string clientPhone, int stylistId, int id = 0)
     // {
-    //   _clientName = clientName;
-    //   _clientPhone = clientPhone;
-    //   _stylistId = stylistId;
-    //   _clientId = id;
+    //
     // }
 
 
