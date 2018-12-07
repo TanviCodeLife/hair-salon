@@ -22,7 +22,7 @@ namespace HairSalon.Models
 
     public string GetClientName()
     {
-      return "fail";
+      return _clientName;
     }
 
 
