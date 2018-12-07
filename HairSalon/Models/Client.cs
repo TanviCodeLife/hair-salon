@@ -5,8 +5,21 @@ using HairSalon;
 
 namespace HairSalon.Models
 {
-    public class Client
-    {
+  public class Client
+  {
+    private string _clientName;
+    private string _clientPhone;
+    private int _stylistId;
+    private int _clientId;
 
-    }
+    // public Client (string clientName, string clientPhone, int stylistId, int id = 0)
+    // {
+    //   _clientName = clientName;
+    //   _clientPhone = clientPhone;
+    //   _stylistId = stylistId;
+    //   _clientId = id;
+    // }
+
+
+  }
 }

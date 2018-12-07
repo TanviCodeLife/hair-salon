@@ -6,43 +6,46 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace HairSalon
 {
-    // update DbNameHere with correct db name
-    public static class DBConfiguration
+  public static class DBConfiguration
+  {
+    public static string ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=DbNameHere;";
+  }
+
+  public class Startup
+  {
+    public Startup(IHostingEnvironment env)
     {
-        public static string ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=DbNameHere;";
+      var builder = new ConfigurationBuilder()
+      .SetBasePath(env.ContentRootPath)
+      .AddEnvironmentVariables();
+      Configuration = builder.Build();
     }
 
-    public class Startup
+    public IConfigurationRoot Configuration { get; }
+
+    public void ConfigureServices(IServiceCollection services)
     {
-        public Startup(IHostingEnvironment env)
-        {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(env.ContentRootPath)
-                .AddEnvironmentVariables();
-            Configuration = builder.Build();
-        }
-
-        public IConfigurationRoot Configuration { get; }
-
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddMvc();
-        }
-
-        public void Configure(IApplicationBuilder app)
-        {
-            app.UseStaticFiles();
-            app.UseDeveloperExceptionPage();
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-            });
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("An error occurred.");
-            });
-        }
+      services.AddMvc();
     }
-}
+
+    public void Configure(IApplicationBuilder app)
+    {
+      app.UseStaticFiles();
+      app.UseDeveloperExceptionPage();
+      app.UseMvc(routes =>
+      {
+        routes.MapRoute(
+        name: "default",
+        template: "{controller=Home}/{action=Index}/{id?}");
+        });
+        app.Run(async (context) =>
+        {
+          await context.Response.WriteAsync("An error occurred.");
+          });
+        }
+        public static class DBConfiguration
+        {
+          public static string ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=tanvi_garg;";
+        }
+      }
+    }

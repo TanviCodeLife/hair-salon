@@ -39,9 +39,6 @@
 ![Visual Of Tables in tanvi_garg DB](/HairSalon/wwwroot/imgs/DBtables.png)
 
 
-
-
-
 ## Setup on Mac OSX
 1. _Download and install .Net Core 1.1.4_
 2. _Download and install Mono_
