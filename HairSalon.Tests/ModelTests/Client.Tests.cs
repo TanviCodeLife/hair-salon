@@ -80,6 +80,17 @@ namespace HairSalon.Tests
     }
 
     [TestMethod]
+    public void Equals_ReturnsTrueIfNameAndPhoneAreSame_Client()
+    {
+      // Arrange, Act
+      Client testClient1 = new Client("testname", "503-XXX-XXXX", 1);
+      Client testClient2 = new Client("testname", "503-XXX-XXXX", 1);
+
+      // Assert
+      Assert.AreEqual(testClient1, testClient2);
+    }
+
+    [TestMethod]
     public void GetAll_ReturnsEmptyClientList_ClientList()
     {
       //Arrange
