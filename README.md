@@ -15,7 +15,10 @@
 * _As an employee, user should be able to add new clients to a specific stylist. user should not be able to add a client if no stylists have been added._
 
 ### Specs
-
+* _As a salon employee, user should be able to see a list of all our stylists._
+* _As an employee, user should be able to select a stylist, see their details, and see a list of all clients that belong to that stylist._
+* _As an employee, user should be able add new stylists to the system when they are hired._
+* _As an employee, user should be able to add new clients to a specific stylist. user should not be able to add a client if no stylists have been added._
 
 
 ### Database Setup
@@ -27,6 +30,9 @@
 2. _Download and install Mono_
 3. _Download and install MAMP 4.5_
 4. _Go to GitHub profile and clone the repo from [TanviCodeLife](https://github.com/TanviCodeLife/word-counter-csharp-proj). Use `git clone <project url>` command to pull it to a local repository in your Home directory._
+5. _Open MAMP and start the Apache and MySql servers_
+6. _Navigate to MAMP > Tools > phpMyAdmin and import the tanvi_garg.sql file to create the database_
+7. _Navigate to MAMP > Tools > phpMyAdmin and import the tanvi_garg_test.sql file to create the test database_
 5. _Run `dotnet restore` from Main Project Folder (HairSalon) and Test Directory (HairSalon.Tests) to install packages_
 6. _Run `dotnet build` from Main Project Folder and make sure no build errors appear. Run `dotnet restore` after build is complete._
 7. _Run `dotnet restore` to compile tests and then `dotnet test` from the Test Directory to run the testing suite. All tests should pass._
