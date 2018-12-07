@@ -26,20 +26,14 @@
 1. _Download and install .Net Core 1.1.4_
 2. _Download and install Mono_
 3. _Download and install MAMP 4.5_
-4. _Go to GitHub profile and project @ [TanviCodeLife](https://github.com/TanviCodeLife/word-counter-csharp-proj)_
-* Clone the repo
-* Run `dotnet restore` from project directory and test directory to install packages
-* Run `dotnet build` from project directory and fix any build errors
-* Run `dotnet test` from the test directory to run the testing suite
-* Run `dotnet run` to start the server
-
-2. _Use #git clone <project url> command to pull it to a local repository in your Home directory using a bash terminal._
-3. _Go to project folder and cd into word-counter-csharp-proj/WordCounter directory from your bash terminal_
-4. _run #dotnet run_
-5. _Wait till you see this message display in you bash terminal - "Now listening on: http://localhost:5000
-Application started. Press Ctrl+C to shut down."_
-6. _Copy the local host link you see in the message for eg http://localhost:5000 and paste it into your web browser address bar._
-7. _Browse through the project._
+4. _Go to GitHub profile and clone the repo from [TanviCodeLife](https://github.com/TanviCodeLife/word-counter-csharp-proj). Use `git clone <project url>` command to pull it to a local repository in your Home directory._
+5. _Run `dotnet restore` from Main Project Folder (HairSalon) and Test Directory (HairSalon.Tests) to install packages_
+6. _Run `dotnet build` from Main Project Folder and make sure no build errors appear. Run `dotnet restore` after build is complete._
+7. _Run `dotnet restore` to compile tests and then `dotnet test` from the Test Directory to run the testing suite. All tests should pass._
+8. _Run `dotnet run` from Main Project Folder to start the server_
+9. _Wait till you see this message display in you bash terminal - "Now listening on: http://localhost:xxxx _
+10. _Copy the local host link http://localhost:xxx and paste it into your web browser address bar._
+11. _Browse through the project._
 
 
 ## Technologies Used
@@ -51,9 +45,6 @@ Application started. Press Ctrl+C to shut down."_
 * JavaScript
 * jQuery 3.3.1
 
-## Links
-
-* Add links here
 
 ## License
 
