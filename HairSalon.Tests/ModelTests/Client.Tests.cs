@@ -1,12 +1,19 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using HairSalon.Models;
+using System;
 
 namespace HairSalon.Tests
 {
   [TestClass]
-  public class ClientTest
+  public class ClientTest : IDisposable
   {
+
+    public void Dispose()
+    {
+      Client.ClearAll();
+    }
+
     public ClientTest()
     {
       DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=tanvi_garg_test;";
@@ -123,6 +130,8 @@ namespace HairSalon.Tests
       //Arrange
       Client testClient1 = new Client("testname1", "503-XXX-XXXX", 1);
       Client testClient2 = new Client("testname2", "949-XXX-XXXX", 1);
+      testClient1.Save();
+      testClient2.Save();
       List<Client> newClientList = new List<Client> {testClient1, testClient2};
 
       //Act
