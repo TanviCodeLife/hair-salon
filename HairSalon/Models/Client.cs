@@ -12,10 +12,13 @@ namespace HairSalon.Models
     private int _stylistId;
     private int _clientId;
 
-    // public Client (string clientName, string clientPhone, int stylistId, int id = 0)
-    // {
-    //
-    // }
+    public Client (string clientName, string clientPhone, int stylistId, int id = 0)
+    {
+      _clientName = clientName;
+      _clientPhone = clientPhone;
+      _stylistId = stylistId;
+      _clientId = id;
+    }
 
 
   }
