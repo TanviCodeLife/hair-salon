@@ -207,6 +207,10 @@ namespace HairSalon.Models
       }
     }
 
+    public void Delete()
+    {
+
+    }
 
   }
 }
