@@ -20,6 +20,11 @@ namespace HairSalon.Models
       _clientId = id;
     }
 
+    public string GetClientName()
+    {
+      return "fail";
+    }
+
 
   }
 }
