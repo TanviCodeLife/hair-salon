@@ -132,6 +132,23 @@ namespace HairSalon.Tests
       CollectionAssert.AreEqual(newClientList, result);
     }
 
+    [TestMethod]
+    public void Save_SavesToClientToDatabase_ClientList()
+    {
+      //Arrange
+      Client testClient1 = new Client("testname1", "503-XXX-XXXX", 1);
+
+      //Act
+      testClient1.Save();
+      List<Client> resultList = Client.GetAll();
+      List<Client> testList = new List<Client>{testClient1};
+
+      //Assert
+      CollectionAssert.AreEqual(testList, resultList);
+    }
+
+
+
 
 
   }

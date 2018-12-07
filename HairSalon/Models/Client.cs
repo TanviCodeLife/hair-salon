@@ -92,7 +92,9 @@ namespace HairSalon.Models
       return allClients;
     }
 
-
+    public void Save()
+    {
+    }
 
 
   }
