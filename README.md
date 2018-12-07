@@ -15,10 +15,16 @@
 * _As an employee, user should be able to add new clients to a specific stylist. user should not be able to add a client if no stylists have been added._
 
 ### Specs
-* _As a salon employee, user should be able to see a list of all our stylists._
-* _As an employee, user should be able to select a stylist, see their details, and see a list of all clients that belong to that stylist._
-* _As an employee, user should be able add new stylists to the system when they are hired._
-* _As an employee, user should be able to add new clients to a specific stylist. user should not be able to add a client if no stylists have been added._
+* _Salon employee should be able to see a list of all the stylists._
+* _Salon employee should be able to select a stylist, see their details, and see a list of all clients that belong to that stylist._
+* _Salon employee should be able add new stylists to the system when they are hired._
+* _Salon employee should be able to add new clients to a specific stylist._
+* _Salon employee should not be able to add a client if no stylists have been added._
+### Specs For Optional Functionality
+* _Salon employee should be able to delete (individual and all) stylists._
+* _Salon employee should be able to delete (individual and all) clients._
+* _Salon employee should be able to enter stylist name into form where employees may search for the stylist. It should display a list of all results._
+* _Salon employee should be able to enter client's name into form where employees may search for the client's. It should display a list of all results._
 
 
 ### Database Setup
