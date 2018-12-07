@@ -25,6 +25,11 @@ namespace HairSalon.Models
       return _clientName;
     }
 
+    public void SetClientName(string newClientName)
+    {
+
+    }
+
 
   }
 }
