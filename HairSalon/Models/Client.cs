@@ -32,7 +32,7 @@ namespace HairSalon.Models
 
     public string GetClientPhone()
     {
-      return "fail";
+      return _clientPhone;
     }
 
 
