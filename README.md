@@ -22,21 +22,26 @@
 
 
 ## Database Setup
+* _Production Database: `tanvi_garg.sql`_
+* _Test Database: `tanvi_garg_test.sql`_
+* _Tables in Database: stylists (columns: id, name) and clients (id, name, phone, stylist_id(foreign key))_
+* _Relationship: One To Many_  
 * _From Terminal Command Line, Enter MySQL using `localhost -uroot -proot` and run following commands to setup the Database and its tables_
 
-`CREATE DATABASE tanvi_garg;`
+* `CREATE DATABASE tanvi_garg;`
 
-`USE tanvi_garg;`
+* `USE tanvi_garg;`
 
-`SELECT DATABASE();`
+* `SELECT DATABASE();`
 
-`CREATE TABLE stylists (id serial PRIMARY KEY, name VARCHAR (255));`
+* `CREATE TABLE stylists (id serial PRIMARY KEY, name VARCHAR (255));`
 
-`CREATE TABLE clients (id serial PRIMARY KEY, name VARCHAR (255), phone VARCHAR (255), stylist_id INT);`
+* `CREATE TABLE clients (id serial PRIMARY KEY, name VARCHAR (255), phone VARCHAR (255), stylist_id INT);`
 
-`SHOW TABLES;`
+* `SHOW TABLES;`
 
-![Visual Of Tables in tanvi_garg DB](/HairSalon/wwwroot/imgs/DBtables.png)
+* ![Visual Of Tables in tanvi_garg DB](/HairSalon/wwwroot/imgs/DBtables.png)
+
 
 
 ## Setup on Mac OSX
@@ -59,7 +64,7 @@
 ## Technologies Used
 
 * .Net Core 1.1.4
-* MAMP 4.5
+* MAMP 4.5 (phpMyAdmin)
 * MySQL
 * Bootstrap 3.3.7
 * JavaScript

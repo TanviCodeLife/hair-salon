@@ -198,9 +198,7 @@ namespace HairSalon.Models
         MySqlParameter phone = new MySqlParameter();
         cmd.Parameters.AddWithValue("@clientPhone", newPhone);
       }
-
-        cmd.ExecuteNonQuery();
-      // _description = newDescription;
+      cmd.ExecuteNonQuery();
 
       conn.Close();
       if (conn != null)
