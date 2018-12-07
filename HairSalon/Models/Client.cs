@@ -136,6 +136,12 @@ namespace HairSalon.Models
       return _clientId;
     }
 
+    public static Client Find(int id)
+    {
+      Client dummyClient = new Client("dummy client", "503-XXX-XXXX", 1);
+      return dummyClient;
+    }
+
 
 
   }
