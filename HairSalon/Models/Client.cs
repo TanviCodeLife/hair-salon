@@ -42,7 +42,7 @@ namespace HairSalon.Models
 
     public int GetStylistId()
     {
-      return 89;
+      return _stylistId;
     }
 
     // public override bool Equals(System.Object otherClient)
