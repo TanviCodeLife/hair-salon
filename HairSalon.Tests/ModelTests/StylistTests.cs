@@ -6,8 +6,15 @@ using HairSalon.Models;
 namespace HairSalon.Tests
 {
   [TestClass]
-  public class StylistTest
+  public class StylistTest : IDisposable
   {
+
+    public void Dispose()
+    {
+      Stylist.ClearAll();
+      Client.ClearAll();
+    }
+
     public StylistTest()
     {
       DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=tanvi_garg_test;";
@@ -58,6 +65,8 @@ namespace HairSalon.Tests
       //Assert
       Assert.AreEqual(testStylist01, testStylist02);
     }
+
+
 
 
   }

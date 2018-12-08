@@ -49,13 +49,14 @@ Test Database: first_last_test.sql. Here tanvi_garg_test.sql
  * SetClientPhone()
  * GetStylistId()
 
+ * ##### Maintenance Methods -
+ * Equals()
+ * ClearAll()
+ * GetHashCode()
+
 * ##### Database Manipulation Methods -
  * Save()
  * Edit()
  * GetAll()
  * Find()
  * Delete()
-
-* ##### Maintainence Methods -
- * Equals()
- * ClearAll()
