@@ -19,22 +19,23 @@ Test Database: first_last_test.sql. Here tanvi_garg_test.sql
 
 #### Use Model-View-Controller Structure. Details below -
 
-1. #### Models :
+1. ### Models and Model Tests :
   * Client - Child Class
   * Stylist - Parent Class
   * Location:ProjectName>Models>ClassName.cs for each.
 
-2. #### Model Unit Tests:
+ #### Model Unit Tests:
  * Create Test for Each Class Method and check for correct fail output criteria.
  * Add Class Method functionality and pass to match expected and actual results.
  * Repeat above steps (fail and pass) for each Class Method.
  * Test Method Naming Convention: `MethodName_IntendedFunction_OutputType`
  * Location:ProjectName.Tests>ModelTests>ClassNameTests.cs
 
-3. ##### Client(Child Class) Constructor, Methods and their Testing
+ #### Client(Child Class) Constructor, Methods and their Testing
  * Child Logic: `ProjectName>Models>ChildClassName.cs`
  * ChildTests Logic Tests: `ProjectName.Tests>ModelTests>ChildClassNameTests.cs`
- * Constructor -
+
+ ##### Constructor -
 `public ClassName (string clientName, string clientPhone, int stylistId, int id = 0)`
 `{`
 ` _clientName = clientName;`
@@ -43,29 +44,30 @@ Test Database: first_last_test.sql. Here tanvi_garg_test.sql
  `_clientId = id;`
  `}`
 
-* ##### Getter/Setter Methods -
+ ##### Child Getter/Setter Methods -
  * GetClientName()
  * SetClientName()
  * GetClientPhone()
  * SetClientPhone()
  * GetStylistId()
 
- * ##### Maintenance Methods -
+ ##### Child Maintenance Methods -
  * Equals()
  * ClearAll()
  * GetHashCode()
 
-* ##### Database Manipulation Methods -
+ ##### Child Database Manipulation Methods -
  * GetAll()
  * Save()
  * Find()
  * Edit()
  * Delete()
 
-4. ##### Stylist(Parent Class) Constructor and Methods and their Testing
+ ##### Stylist(Parent Class) Constructor and Methods and their Testing
  * Parent Logic: `ProjectName>Models>ParentClassName.cs`
  * ParentTests Logic Tests: `ProjectName.Tests>ModelTests>ParentClassNameTests.cs`
- * Constructor -
+
+ ##### Constructor -
 `public Stylist(string stylistName, int id = 0)`
 `{`
 `_name = stylistName;`
@@ -74,20 +76,35 @@ Test Database: first_last_test.sql. Here tanvi_garg_test.sql
 `_clients = new List<Client>{};`
 `}`
 
-* ##### Getter/Setter Methods -
-* GetName()
-* SetName()
-* GetId()
+ ##### Parent Getter/Setter Methods -
+ * GetName()
+ * SetName()
+ * GetId()
 
-* ##### Maintenance Methods -
-* Equals()
-* ClearAll()
-* GetHashCode()
+ ##### Parent Maintenance Methods -
+ * Equals()
+ * ClearAll()
+ * GetHashCode()
 
-* ##### Database Manipulation Methods -
-* GetAll()
-* Save()
-* Find()
-* GetClients()
-* Edit()
-* Delete()
+ ##### Parent Database Manipulation Methods -
+ * GetAll()
+ * Save()
+ * Find()
+ * GetClients()
+ * Edit()
+ * Delete()
+
+ ****
+2. ### Controllers and Controller Tests :
+  * Stylist - Parent Class
+  * Client - Child Class
+  * Home Controller - Location:`ProjectName>Controllers>ParentClassNameController.cs`
+  * Parent Controller - Location:`ProjectName>Controllers>ParentClassNameController.cs`
+  * Child Controller - Location:`ProjectName>Controllers>ChildClassNameController.cs`
+  * Parent Controller Test - Location:`ProjectName.Tests>ControllersTests>ParentClassNameControllerTest.cs`
+  * Child Controller Test - Location:`ProjectName.Tests>ControllersTests>ChildClassNameControllerTest.cs`
+
+  * Controller Routes and URLs with their corresponding views are based on Restful Routing
+  * ![Visual Of Restful Routing Via Controllers](/HairSalon/wwwroot/imgs/Restful.png)
+
+  * Controller Tests:
