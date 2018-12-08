@@ -138,5 +138,22 @@ namespace HairSalon.Tests
       Assert.IsInstanceOfType(edit, typeof(ViewResult));
     }
 
+    [TestMethod]
+    public void Edit_HasCorrectModelType_Account()
+    {
+      //Arrange
+      Stylist testStylist01 = new Stylist("test stylist1");
+      testStylist01.Save();
+      string newName = "test stylist2";
+      testStylist01.Edit(newName);
+      ViewResult edit = new StylistsController().Edit(testStylist01.GetId()) as ViewResult;
+
+      //Act
+      var result = edit.ViewData.Model;
+
+      //Assert
+      Assert.IsInstanceOfType(result, typeof(Stylist));
+    }
+
   }
 }
