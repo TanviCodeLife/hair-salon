@@ -8,28 +8,30 @@
 * _The owner(user) should be able to add a list of the stylists, and for each stylist, add clients who see that stylist. The stylists work independently, so each client only belongs to a single stylist._
 
 ### Database:
-* _Create Database using following instructions._
-_Production Database: first_last.sql. Here tanvi_garg.sql_
-_Test Database: first_last_test.sql. Here tanvi_garg_test.sql_
-* _Always create id column for all tables with auto-increment and primary key._
-* _Child Class Foreign Key ID = Parent Class Primary Key(applies to One-To-Many relationship)_
-* _For HairSalon Client Id = Stylist Foreign Key (column name = stylist_id)._
+* Create Database using following instructions.
+* Production Database: first_last.sql. Here tanvi_garg.sql_
+Test Database: first_last_test.sql. Here tanvi_garg_test.sql
+* Always create id column for all tables with auto-increment and primary key.
+* Child Class Foreign Key ID = Parent Class Primary Key(applies to One-To-Many relationship)
+* For HairSalon Client Id = Stylist Foreign Key (column name = stylist_id).
 
 ### Project Structure
+
 #### Use Model-View-Controller Structure. Details below -
 
 1. #### Models :
-_Client - Child Class_
-_Stylist - Parent Class_
-_Location:ProjectName>Models>ClassName.cs_
+  * Client - Child Class
+  * Stylist - Parent Class
+  * Location:ProjectName>Models>ClassName.cs
 
 2. #### Model Unit Tests:
-_Create Test for Class Method, fail_
-_Add Class Method function, pass_
-_Test Method Naming Convention: `MethodName_IntendedFunction_OutputType`_ _Location:ProjectName.Tests>ModelTests>ClassNameTests.cs_
+ * Create Test for Class Method, fail
+ * Add Class Method function, pass
+ * Test Method Naming Convention: `MethodName_IntendedFunction_OutputType`
+ * Location:ProjectName.Tests>ModelTests>ClassNameTests.cs
 
 3. ##### Client(Child Class) Methods
-Constructor -
+ * Constructor -
 `public ClassName (string clientName, string clientPhone, int stylistId, int id = 0)`
 `{`
 ` _clientName = clientName;`
@@ -39,14 +41,19 @@ Constructor -
  `}`
 
 4. ##### Getter/Setter Methods -
- _GetClientName()_ _SetClientName()_
-_GetClientPhone()_
-_SetClientPhone()_
-_GetStylistId()_
+ * GetClientName()
+ * SetClientName()
+ * GetClientPhone()
+ * SetClientPhone()
+ * GetStylistId()
 
 5. ##### Database Manipulation Methods -
-_Save()_
-_Edit()_
-_GetAll()_
-_Find()_
-_Delete()_
+ * Save()
+ * Edit()
+ * GetAll()
+ * Find()
+ * Delete()
+
+6. ##### Maintainence Methods -
+ * Equals()
+ * ClearAll()

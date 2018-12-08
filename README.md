@@ -56,7 +56,7 @@
 6. _Run `dotnet build` from Main Project Folder and make sure no build errors appear. Run `dotnet restore` after build is complete._
 7. _Run `dotnet restore` to compile tests and then `dotnet test` from the Test Directory to run the testing suite. All tests should pass._
 8. _Run `dotnet run` from Main Project Folder to start the server_
-9. _Wait till you see this message display in you bash terminal - "Now listening on: http://localhost:xxxx _
+9. _Wait till you see this message display in you bash terminal - "Now listening on: http://localhost:xxxx"_
 10. _Copy the local host link http://localhost:xxx and paste it into your web browser address bar._
 11. _Browse through the project._
 
