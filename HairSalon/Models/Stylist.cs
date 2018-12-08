@@ -23,6 +23,11 @@ namespace HairSalon.Models
       return _name;
     }
 
+    public int GetId()
+    {
+      return 0;
+    }
+
     public override bool Equals(System.Object otherStylist)
     {
       if(!(otherStylist is Stylist))

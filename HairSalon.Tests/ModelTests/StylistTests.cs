@@ -35,15 +35,30 @@ namespace HairSalon.Tests
     }
 
     [TestMethod]
+    public void GetId_ReturnsStylistId_String()
+    {
+      //Arrange
+      int stylistId = 1;
+      Stylist testStylist01 = new Stylist("test stylist1", 1);
+
+      //Act
+      int resultId = testStylist01.GetId();
+
+      //Assert
+      Assert.AreEqual(stylistId, resultId);
+    }
+
+    [TestMethod]
     public void Equals_ReturnsTrueIfStylistsAreTheSame_Category()
     {
       //Arrange, Act
-      Stylist Stylist01 = new Stylist("Household chores");
-      Stylist Stylist02 = new Stylist("Household chores");
+      Stylist testStylist01 = new Stylist("test stylist1");
+      Stylist testStylist02 = new Stylist("test stylist1");
 
       //Assert
-      Assert.AreEqual(Stylist01, Stylist02);
+      Assert.AreEqual(testStylist01, testStylist02);
     }
+
 
   }
 }
