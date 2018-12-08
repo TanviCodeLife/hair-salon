@@ -18,5 +18,12 @@ namespace HairSalon.Models
       _clients = new List<Client>{};
     }
 
+    public string GetName()
+    {
+      return "fail";
+    }
+
+
+
   }
 }
