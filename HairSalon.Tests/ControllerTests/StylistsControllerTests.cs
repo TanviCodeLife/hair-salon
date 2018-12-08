@@ -69,22 +69,22 @@ namespace HairSalon.Tests
       //Act
       ActionResult create = controller.Create("test name1");
 
-     //Assert
+      //Assert
       Assert.IsInstanceOfType(create, typeof(RedirectToActionResult));
     }
 
-    [TestMethod]
-    public void Create_HasCorrectModelType_StylistList()
-    {
-      //Arrange
-      ViewResult create = new StylistsController().Create("test name1") as ViewResult;
-
-      //Act
-      var result = create.ViewData.Model;
-
-      //Assert
-      Assert.IsInstanceOfType(result, typeof(List<Stylist>));
-    }
+    // [TestMethod]
+    // public void Create_HasCorrectModelType_StylistList()
+    // {
+    //   //Arrange
+    //   ViewResult create = new StylistsController().Create("test name1") as ViewResult;
+    //
+    //   //Act
+    //   var result = create.ViewData.Model;
+    //
+    //   //Assert
+    //   Assert.IsInstanceOfType(result, typeof(List<Stylist>));
+    // }
 
     [TestMethod]
     public void Create_ReturnsCorrectActionName_True()
@@ -97,6 +97,19 @@ namespace HairSalon.Tests
       var result = index.ActionName;
       //Assert
       Assert.AreEqual(result, "Index");
+    }
+
+    [TestMethod]
+    public void Show_ReturnsCorrectView_True()
+    {
+      //Arrange
+      StylistsController controller = new StylistsController();
+
+      //Act
+      ActionResult show = controller.Show(0);
+
+      //Assert
+      Assert.IsInstanceOfType(show, typeof(ViewResult));
     }
 
   }
