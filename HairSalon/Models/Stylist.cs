@@ -153,6 +153,12 @@ namespace HairSalon.Models
 
     }
 
+    public List<Client> GetClients()
+    {
+    List<Client> allStylistClients = new List<Client> {};
+    return allStylistClients;
+    }
+
 
   }
 }
