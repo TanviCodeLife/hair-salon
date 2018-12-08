@@ -133,6 +133,10 @@ namespace HairSalon.Models
       return foundStylist;
     }
 
+    public void Edit(string newName)
+    {
+    }
 
-}
+
+  }
 }
