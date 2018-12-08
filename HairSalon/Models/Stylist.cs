@@ -45,7 +45,7 @@ namespace HairSalon.Models
 
     public override int GetHashCode()
     {
-      return this.GetClientName().GetHashCode();
+      return this.GetName().GetHashCode();
     }
 
     public static void ClearAll()
@@ -62,6 +62,31 @@ namespace HairSalon.Models
         conn.Dispose();
       }
     }
+
+    public static List<Stylist> GetAll()
+    {
+      List<Stylist> allStylists = new List<Stylist> {};
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"SELECT * FROM stylists;";
+      var rdr = cmd.ExecuteReader() as MySqlDataReader;
+      while(rdr.Read())
+      {
+        int stylistId = rdr.GetInt32(0);
+        string stylistName = rdr.GetString(1);
+        Stylist newStylist = new Stylist(stylistName, stylistId);
+        allStylists.Add(newStylist);
+      }
+
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+      return allStylists;
+    }
+
 
   }
 }

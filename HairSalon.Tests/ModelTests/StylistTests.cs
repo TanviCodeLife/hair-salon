@@ -66,6 +66,31 @@ namespace HairSalon.Tests
       Assert.AreEqual(testStylist01, testStylist02);
     }
 
+    [TestMethod]
+    public void GetAll_StylistsEmptyAtFirst_List()
+    {
+      //Arrange, Act
+      int result = Stylist.GetAll().Count;
+
+      //Assert
+      Assert.AreEqual(0, result);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsAllStylistObjects_StylistList()
+    {
+      //Arrange
+      Stylist testStylist01 = new Stylist("test stylist1");
+      Stylist testStylist02 = new Stylist("test stylist1");
+      List<Stylist> newStylistList = new List<Stylist> { testStylist01, testStylist02 };
+
+      //Act
+      List<Stylist> result = Stylist.GetAll();
+
+      //Assert
+      CollectionAssert.AreEqual(newStylistList, result);
+    }
+
 
 
 
