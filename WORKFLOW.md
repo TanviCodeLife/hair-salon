@@ -25,12 +25,14 @@ Test Database: first_last_test.sql. Here tanvi_garg_test.sql
   * Location:ProjectName>Models>ClassName.cs
 
 2. #### Model Unit Tests:
- * Create Test for Class Method, fail
- * Add Class Method function, pass
+ * Create Test for Each Class Method and fail
+ * Add Class Method functionality and pass
+ * Repeat for each Class Method
  * Test Method Naming Convention: `MethodName_IntendedFunction_OutputType`
  * Location:ProjectName.Tests>ModelTests>ClassNameTests.cs
 
-3. ##### Client(Child Class) Methods
+3. ##### Client(Child Class) Constructor and Methods
+ * Location:ProjectName>Models>ClassName.cs
  * Constructor -
 `public ClassName (string clientName, string clientPhone, int stylistId, int id = 0)`
 `{`
@@ -40,20 +42,20 @@ Test Database: first_last_test.sql. Here tanvi_garg_test.sql
  `_clientId = id;`
  `}`
 
-4. ##### Getter/Setter Methods -
+* ##### Getter/Setter Methods -
  * GetClientName()
  * SetClientName()
  * GetClientPhone()
  * SetClientPhone()
  * GetStylistId()
 
-5. ##### Database Manipulation Methods -
+* ##### Database Manipulation Methods -
  * Save()
  * Edit()
  * GetAll()
  * Find()
  * Delete()
 
-6. ##### Maintainence Methods -
+* ##### Maintainence Methods -
  * Equals()
  * ClearAll()

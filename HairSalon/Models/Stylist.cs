@@ -13,7 +13,9 @@ namespace HairSalon.Models
 
     public Stylist(string stylistName, int id = 0)
     {
-
+      _name = stylistName;
+      _id = id;
+      _clients = new List<Client>{};
     }
 
   }
