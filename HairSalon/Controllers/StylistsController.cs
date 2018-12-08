@@ -38,7 +38,14 @@ namespace HairSalon.Controllers
       model.Add("stylist", selectedStylist);
       model.Add("clients", stylistClients);
       return View(model);
+    }
 
+    [HttpGet("/stylists/{id}/edit")]
+    public ActionResult Edit(int id)
+    {
+      Stylist stylist = Stylist.Find(id);
+      //return View(stylist);
+      return new EmptyResult();
     }
 
 

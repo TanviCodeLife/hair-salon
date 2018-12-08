@@ -125,5 +125,18 @@ namespace HairSalon.Tests
       Assert.IsInstanceOfType(result, typeof(Dictionary<string, object>));
     }
 
+    [TestMethod]
+    public void Edit_ReturnsCorrectView_True()
+    {
+      //Arrange
+      StylistsController controller = new StylistsController();
+
+      //Act
+      ActionResult edit = controller.Edit(0);
+
+      //Assert
+      Assert.IsInstanceOfType(edit, typeof(ViewResult));
+    }
+
   }
 }

@@ -63,7 +63,7 @@ Test Database: first_last_test.sql. Here tanvi_garg_test.sql
  * Edit()
  * Delete()
 
- ##### Stylist(Parent Class) Constructor and Methods and their Testing
+ #### Stylist(Parent Class) Constructor and Methods and their Testing
  * Parent Logic: `ProjectName>Models>ParentClassName.cs`
  * ParentTests Logic Tests: `ProjectName.Tests>ModelTests>ParentClassNameTests.cs`
 
