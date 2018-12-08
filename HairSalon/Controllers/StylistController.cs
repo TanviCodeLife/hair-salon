@@ -18,6 +18,7 @@ namespace HairSalon.Controllers
     public ActionResult New()
     {
       return View();
+      //failed with return new EmptyResult();
     }
   }
 
