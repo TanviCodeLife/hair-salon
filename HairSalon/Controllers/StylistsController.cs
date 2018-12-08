@@ -18,7 +18,16 @@ namespace HairSalon.Controllers
     public ActionResult New()
     {
       return View();
-      //failed with return new EmptyResult();
+    }
+
+    [HttpPost("/stylists")]
+    public ActionResult Create(string stylistName)
+    {
+      Stylist newStylist = new Stylist(stylistName);
+      newStylist.Save();
+      List<Stylist> allStylists = Stylist.GetAll();
+      //return RedirectToAction("Index");
+      return new EmptyResult();
     }
   }
 

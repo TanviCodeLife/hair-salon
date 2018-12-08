@@ -27,10 +27,10 @@ namespace HairSalon.Tests
       StylistsController controller = new StylistsController();
 
       //Act
-      ActionResult Index = controller.Index();
+      ActionResult index = controller.Index();
 
       //Assert
-      Assert.IsInstanceOfType(Index, typeof(ViewResult));
+      Assert.IsInstanceOfType(index, typeof(ViewResult));
     }
 
     [TestMethod]
@@ -57,6 +57,19 @@ namespace HairSalon.Tests
 
       //Assert
       Assert.IsInstanceOfType(New, typeof(ViewResult));
+    }
+
+    [TestMethod]
+    public void Create_ReturnsCorrectView_True()
+    {
+      //Arrange
+      StylistsController controller = new StylistsController();
+
+      //Act
+      ActionResult create = controller.Create("test name1");
+
+     //Assert
+      Assert.IsInstanceOfType(create, typeof(RedirectToActionResult));
     }
 
   }
