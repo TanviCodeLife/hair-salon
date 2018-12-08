@@ -88,5 +88,6 @@ Test Database: first_last_test.sql. Here tanvi_garg_test.sql
 * GetAll()
 * Save()
 * Find()
+* GetClients()
 * Edit()
 * Delete()
