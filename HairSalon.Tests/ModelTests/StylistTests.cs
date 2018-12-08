@@ -34,5 +34,16 @@ namespace HairSalon.Tests
       Assert.AreEqual(name, resultName);
     }
 
+    [TestMethod]
+    public void Equals_ReturnsTrueIfStylistsAreTheSame_Category()
+    {
+      //Arrange, Act
+      Stylist Stylist01 = new Stylist("Household chores");
+      Stylist Stylist02 = new Stylist("Household chores");
+
+      //Assert
+      Assert.AreEqual(Stylist01, Stylist02);
+    }
+
   }
 }
