@@ -105,6 +105,12 @@ namespace HairSalon.Models
       }
     }
 
+    public static Stylist Find(int id)
+    {
+     Stylist dummyStylist = new Stylist("dummy stylist");
+     return dummyStylist;
+    }
 
-  }
+
+}
 }
