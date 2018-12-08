@@ -81,7 +81,7 @@ namespace HairSalon.Tests
     {
       //Arrange
       Stylist testStylist01 = new Stylist("test stylist1");
-      Stylist testStylist02 = new Stylist("test stylist1");
+      Stylist testStylist02 = new Stylist("test stylist2");
       testStylist01.Save();
       testStylist02.Save();
       List<Stylist> newStylistList = new List<Stylist> { testStylist01, testStylist02 };

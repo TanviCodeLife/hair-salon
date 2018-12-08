@@ -96,6 +96,7 @@ namespace HairSalon.Models
       MySqlParameter name = new MySqlParameter();
       cmd.Parameters.AddWithValue("@name", this._name);
       cmd.ExecuteNonQuery();
+      _id = (int) cmd.LastInsertedId;
 
       conn.Close();
       if (conn != null)
