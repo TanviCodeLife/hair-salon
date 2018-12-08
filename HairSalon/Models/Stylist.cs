@@ -25,7 +25,7 @@ namespace HairSalon.Models
 
     public int GetId()
     {
-      return 0;
+      return _id;
     }
 
     public override bool Equals(System.Object otherStylist)
@@ -38,7 +38,8 @@ namespace HairSalon.Models
       {
         Stylist newStylist = (Stylist) otherStylist;
         bool nameEquality = this.GetName().Equals(newStylist.GetName());
-        return nameEquality;
+        bool idEquality = this.GetId().Equals(newStylist.GetId());
+        return (idEquality && nameEquality);
       }
     }
 
