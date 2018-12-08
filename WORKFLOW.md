@@ -22,17 +22,18 @@ Test Database: first_last_test.sql. Here tanvi_garg_test.sql
 1. #### Models :
   * Client - Child Class
   * Stylist - Parent Class
-  * Location:ProjectName>Models>ClassName.cs
+  * Location:ProjectName>Models>ClassName.cs for each.
 
 2. #### Model Unit Tests:
- * Create Test for Each Class Method and fail
- * Add Class Method functionality and pass
- * Repeat for each Class Method
+ * Create Test for Each Class Method and check for correct fail output criteria.
+ * Add Class Method functionality and pass to match expected and actual results.
+ * Repeat above steps (fail and pass) for each Class Method.
  * Test Method Naming Convention: `MethodName_IntendedFunction_OutputType`
  * Location:ProjectName.Tests>ModelTests>ClassNameTests.cs
 
-3. ##### Client(Child Class) Constructor and Methods
- * Location:ProjectName>Models>ClassName.cs
+3. ##### Client(Child Class) Constructor, Methods and their Testing
+ * Child Logic: `ProjectName>Models>ChildClassName.cs`
+ * ChildTests Logic Tests: `ProjectName.Tests>ModelTests>ChildClassNameTests.cs`
  * Constructor -
 `public ClassName (string clientName, string clientPhone, int stylistId, int id = 0)`
 `{`
@@ -57,6 +58,35 @@ Test Database: first_last_test.sql. Here tanvi_garg_test.sql
 * ##### Database Manipulation Methods -
  * GetAll()
  * Save()
- * Edit()
  * Find()
+ * Edit()
  * Delete()
+
+4. ##### Stylist(Parent Class) Constructor and Methods and their Testing
+ * Parent Logic: `ProjectName>Models>ParentClassName.cs`
+ * ParentTests Logic Tests: `ProjectName.Tests>ModelTests>ParentClassNameTests.cs`
+ * Constructor -
+`public Stylist(string stylistName, int id = 0)`
+`{`
+`_name = stylistName;`
+`_id = id;`
+`_stylistId = stylistId;`
+`_clients = new List<Client>{};`
+`}`
+
+* ##### Getter/Setter Methods -
+* GetName()
+* SetName()
+* GetId()
+
+* ##### Maintenance Methods -
+* Equals()
+* ClearAll()
+* GetHashCode()
+
+* ##### Database Manipulation Methods -
+* GetAll()
+* Save()
+* Find()
+* Edit()
+* Delete()

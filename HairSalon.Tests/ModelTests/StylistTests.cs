@@ -56,7 +56,7 @@ namespace HairSalon.Tests
     }
 
     [TestMethod]
-    public void Equals_ReturnsTrueIfStylistsAreTheSame_Category()
+    public void Equals_ReturnsTrueIfStylistsAreTheSame_Stylist()
     {
       //Arrange, Act
       Stylist testStylist01 = new Stylist("test stylist1");
@@ -89,6 +89,21 @@ namespace HairSalon.Tests
 
       //Assert
       CollectionAssert.AreEqual(newStylistList, result);
+    }
+
+    [TestMethod]
+    public void Save_SavesStylistToDatabase_StylistList()
+    {
+      //Arrange
+      Stylist testStylist01 = new Stylist("test stylist1");
+      testStylist01.Save();
+
+      //Act
+      List<Stylist> result = Stylist.GetAll();
+      List<Stylist> testList = new List<Stylist>{testStylist01};
+
+      //Assert
+      CollectionAssert.AreEqual(testList, result);
     }
 
 
