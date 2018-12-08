@@ -37,9 +37,8 @@ namespace HairSalon.Controllers
       List<Client> stylistClients = selectedStylist.GetClients();
       model.Add("stylist", selectedStylist);
       model.Add("clients", stylistClients);
-      //return View(model);
-      return View(0);
-      //return new EmptyResult();
+      return View(model);
+
     }
 
 
