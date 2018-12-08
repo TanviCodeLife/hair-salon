@@ -8,12 +8,13 @@ using HairSalon.Models;
 namespace HairSalon.Tests
 {
   [TestClass]
-  public class StylistsControllerTest
+  public class StylistsControllerTest : IDisposable
   {
-    // public void Dispose()
-    // {
-    //   Stylist.DeleteAll();
-    // }
+
+    public void Dispose()
+    {
+      Stylist.ClearAll();
+    }
 
     public StylistsControllerTest()
     {
@@ -34,7 +35,7 @@ namespace HairSalon.Tests
     }
 
     [TestMethod]
-    public void Index_HasCorrectModelType_Account()
+    public void Index_HasCorrectModelType_StylistList()
     {
       //Arrange
       ViewResult Index = new StylistsController().Index() as ViewResult;
@@ -70,6 +71,32 @@ namespace HairSalon.Tests
 
      //Assert
       Assert.IsInstanceOfType(create, typeof(RedirectToActionResult));
+    }
+
+    [TestMethod]
+    public void Create_HasCorrectModelType_StylistList()
+    {
+      //Arrange
+      ViewResult create = new StylistsController().Create("test name1") as ViewResult;
+
+      //Act
+      var result = create.ViewData.Model;
+
+      //Assert
+      Assert.IsInstanceOfType(result, typeof(List<Stylist>));
+    }
+
+    [TestMethod]
+    public void Create_ReturnsCorrectActionName_True()
+    {
+      //Arrange
+      StylistsController controller = new StylistsController();
+      RedirectToActionResult index = controller.Create("test name1") as RedirectToActionResult;
+
+      //Act
+      var result = index.ActionName;
+      //Assert
+      Assert.AreEqual(result, "Index");
     }
 
   }
