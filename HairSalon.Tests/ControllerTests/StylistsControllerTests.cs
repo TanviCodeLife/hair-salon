@@ -95,6 +95,7 @@ namespace HairSalon.Tests
 
       //Act
       var result = index.ActionName;
+
       //Assert
       Assert.AreEqual(result, "Index");
     }
@@ -178,6 +179,22 @@ namespace HairSalon.Tests
 
       //Assert
       Assert.IsInstanceOfType(updateView, typeof(RedirectToActionResult));
+    }
+
+    [TestMethod]
+    public void Update_ReturnsCorrectActionName_True()
+    {
+      //Arrange
+      StylistsController controller = new StylistsController();
+      Stylist testStylist = new Stylist("test stylist1");
+      testStylist.Save();
+      RedirectToActionResult indexView = controller.Update( testStylist.GetId(), "test stylist2") as RedirectToActionResult;
+
+      //Act
+      var result = indexView.ActionName;
+
+      //Assert
+      Assert.AreEqual(result, "Index");
     }
 
   }
