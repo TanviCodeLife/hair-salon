@@ -165,5 +165,20 @@ namespace HairSalon.Tests
       Assert.IsInstanceOfType(result, typeof(Stylist));
     }
 
+    [TestMethod]
+    public void Update_ReturnsCorrectView_True()
+    {
+      //Arrange
+      StylistsController controller = new StylistsController();
+      Stylist testStylist = new Stylist("test stylist1");
+      testStylist.Save();
+
+      //Act
+      ActionResult updateView = controller.Update(testStylist.GetId(), "test stylist2");
+
+      //Assert
+      Assert.IsInstanceOfType(updateView, typeof(RedirectToActionResult));
+    }
+
   }
 }

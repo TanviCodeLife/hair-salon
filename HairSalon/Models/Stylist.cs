@@ -144,6 +144,7 @@ namespace HairSalon.Models
       MySqlParameter name = new MySqlParameter();
       cmd.Parameters.AddWithValue("@newName", newName);
       cmd.ExecuteNonQuery();
+      _name = newName;
 
       conn.Close();
       if (conn != null)
