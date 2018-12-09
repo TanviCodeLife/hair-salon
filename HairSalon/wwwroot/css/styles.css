@@ -1,0 +1,8 @@
+.jumbotron-image {
+  display: block;
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #444;
+  width: 80%;
+  max-width: 816px;
+}

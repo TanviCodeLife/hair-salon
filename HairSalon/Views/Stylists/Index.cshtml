@@ -1,0 +1,33 @@
+@{
+  Layout = "_Layout";
+}
+
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Perfect Look</h1>
+    <img src="~/img/HairTools.jpg" alt="Hair Tools" class="jumbotron-image">
+    <p class="lead">Perfect Look Stylists Management</p>
+  </div>
+  <br>
+  @if (Model.Count == 0)
+  {
+    <p class="align">No Stylist In Database! Start by Adding one.</p>
+  }
+  <a class="btn btn-primary" href="'/stylists/new'" role="button" style="margin-left: 40%">Home Page!</a>
+
+  <p class="align">All Stylists in Salon Database.</p>
+  <div class="row">
+    @foreach (var stylist in Stylist)
+    {
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><a href='/stylists/@stylist.GetId()'>@stylist.GetName()</a></h5>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+}
+<a class="btn btn-primary" href="/" role="button" style="margin-left: 40%">Home Page!</a>
+</div>

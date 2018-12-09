@@ -73,7 +73,7 @@ namespace HairSalon.Tests
       Assert.IsInstanceOfType(create, typeof(RedirectToActionResult));
     }
 
-    // [TestMethod]
+    // [TestMethod] - used when return View("Index", allStylists); is used
     // public void Create_HasCorrectModelType_StylistList()
     // {
     //   //Arrange
@@ -85,6 +85,7 @@ namespace HairSalon.Tests
     //   //Assert
     //   Assert.IsInstanceOfType(result, typeof(List<Stylist>));
     // }
+    //
 
     [TestMethod]
     public void Create_ReturnsCorrectActionName_True()
@@ -211,7 +212,7 @@ namespace HairSalon.Tests
       //Assert
       Assert.IsInstanceOfType(deleteView, typeof(RedirectToActionResult));
     }
-    
+
     [TestMethod]
     public void Delete_ReturnsCorrectActionName_True()
     {
