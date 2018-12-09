@@ -184,6 +184,10 @@ namespace HairSalon.Models
       return allStylistClients;
     }
 
+    public void Delete()
+    {
+
+    }
 
   }
 }

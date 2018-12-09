@@ -142,7 +142,6 @@ namespace HairSalon.Tests
     public void GetClients_RetrievesAllClientsWithStylist_ClientList()
     {
       //Arrange
-      //Arrange
       Stylist testStylist01 = new Stylist("test stylist1");
       testStylist01.Save();
       Client testClient1 = new Client("testname1", "503-XXX-XXXX", testStylist01.GetId());
@@ -158,8 +157,27 @@ namespace HairSalon.Tests
       CollectionAssert.AreEqual(testClientList, resultClientList);
     }
 
+    [TestMethod]
+    public void Delete_DeletesRecordFromDatabaseAndSetsClientId_StylistList()
+    {
+      //Arrange
+      Stylist testStylist01 = new Stylist("test stylist1");
+      Stylist testStylist02 = new Stylist("test stylist2");
+      testStylist01.Save();
+      testStylist02.Save();
+      Client testClient = new Client("test client1", "503-XXX-XXX", testStylist01.GetId());
+      testClient.Save();
 
+      //Act
+      testStylist01.Delete();
+      List<Stylist> allStylists = Stylist.GetAll();
+      List<Stylist> expectedList = new List<Stylist>{ testStylist02 };
+      //client = Client.Find(client.Id);
 
+      //Assert
+      CollectionAssert.AreEqual(expectedList, allStylists);
+      //Assert.AreEqual(0, client.StylistId);
+    }
 
   }
 }

@@ -196,6 +196,37 @@ namespace HairSalon.Tests
       //Assert
       Assert.AreEqual(result, "Index");
     }
+    // 
+    // [TestMethod]
+    // public void Delete_ReturnsCorrectView_True()
+    // {
+    //   //Arrange
+    //   StylistsController controller = new StylistsController();
+    //   Stylist testStylist = new Stylist("test stylist1");
+    //   testStylist.Save();
+    //
+    //   //Act
+    //   ActionResult deleteView = controller.Delete(testStylist.GetId());
+    //
+    //   //Assert
+    //   Assert.IsInstanceOfType(deleteView, typeof(RedirectToActionResult));
+    // }
+    //
+    // [TestMethod]
+    // public void Delete_ReturnsCorrectActionName_True()
+    // {
+    //   //Arrange
+    //   StylistsController controller = new StylistsController();
+    //   Stylist testStylist = new Stylist("test stylist1");
+    //   testStylist.Save();
+    //   RedirectToActionResult indexView = controller.Delete( testStylist.GetId()) as RedirectToActionResult;
+    //
+    //   //Act
+    //   var result = indexView.ActionName;
+    //
+    //   //Assert
+    //   Assert.AreEqual(result, "Index");
+    // }
 
   }
 }
