@@ -158,7 +158,7 @@ namespace HairSalon.Tests
     }
 
     [TestMethod]
-    public void Delete_DeletesRecordFromDatabaseAndSetsClientId_StylistList()
+    public void Delete_DeletesStylistFromDatabase_StylistList()
     {
       //Arrange
       Stylist testStylist01 = new Stylist("test stylist1");
@@ -172,11 +172,30 @@ namespace HairSalon.Tests
       testStylist01.Delete();
       List<Stylist> allStylists = Stylist.GetAll();
       List<Stylist> expectedList = new List<Stylist>{ testStylist02 };
-      //client = Client.Find(client.Id);
 
       //Assert
       CollectionAssert.AreEqual(expectedList, allStylists);
-      //Assert.AreEqual(0, client.StylistId);
+    }
+
+    [TestMethod]
+    public void Delete_DeletesStylistFromClientDatabase_StylistList()
+    {
+      //Arrange
+      Stylist testStylist01 = new Stylist("test stylist1");
+      Stylist testStylist02 = new Stylist("test stylist2");
+      testStylist01.Save();
+      testStylist02.Save();
+      Client testClient = new Client("test client1", "503-XXX-XXX", testStylist01.GetId());
+      testClient.Save();
+
+      //Act
+      testStylist01.Delete();
+      List<Stylist> allStylists = Stylist.GetAll();
+      List<Stylist> expectedList = new List<Stylist>{ testStylist02 };
+      Client foundClient = Client.Find(testClient.GetClientId());
+
+      //Assert
+      Assert.AreEqual(0, foundClient.GetStylistId());
     }
 
   }
