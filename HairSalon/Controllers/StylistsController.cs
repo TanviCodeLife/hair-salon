@@ -55,14 +55,14 @@ namespace HairSalon.Controllers
       return RedirectToAction("Index");
     }
 
-    // [HttpPost("/stylists/{id}/delete")]
-    // public ActionResult Delete(int id)
-    // {
-    //   Stylist stylist = Stylist.Find(id);
-    //   stylist.Delete();
-    //   //return RedirectToAction("Index");
-    //   return new EmptyResult();
-    // }
+    [HttpPost("/stylists/{id}/delete")]
+    public ActionResult Delete(int id)
+    {
+      Stylist stylist = Stylist.Find(id);
+      stylist.Delete();
+      //return RedirectToAction("Index");
+      return new EmptyResult();
+    }
 
   }
 
