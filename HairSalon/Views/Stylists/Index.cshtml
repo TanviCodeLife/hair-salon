@@ -13,11 +13,11 @@
   {
     <p class="align">No Stylist In Database! Start by Adding one.</p>
   }
-  <a class="btn btn-primary" href="'/stylists/new'" role="button" style="margin-left: 40%">Home Page!</a>
 
   <p class="align">All Stylists in Salon Database.</p>
+
   <div class="row">
-    @foreach (var stylist in Stylist)
+  @foreach (var stylist in Model)
     {
       <div class="col-sm-6">
         <div class="card">
@@ -28,6 +28,7 @@
       </div>
     }
   </div>
-}
+
+<a class="btn btn-primary" href="/stylists/new" role="button" style="margin-left: 40%">Add New Stylist</a>
 <a class="btn btn-primary" href="/" role="button" style="margin-left: 40%">Home Page!</a>
 </div>
