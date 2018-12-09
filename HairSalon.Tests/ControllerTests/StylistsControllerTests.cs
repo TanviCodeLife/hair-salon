@@ -134,18 +134,22 @@ namespace HairSalon.Tests
       Assert.IsInstanceOfType(result, typeof(Dictionary<string, object>));
     }
 
-    // [TestMethod]
-    // public void Edit_ReturnsCorrectView_True()
-    // {
-    //   //Arrange
-    //   StylistsController controller = new StylistsController();
-    //
-    //   //Act
-    //   ActionResult edit = controller.Edit(0);
-    //
-    //   //Assert
-    //   Assert.IsInstanceOfType(edit, typeof(ViewResult));
-    // }
+    [TestMethod]
+    public void Edit_ReturnsCorrectView_True()
+    {
+      //Arrange
+      StylistsController controller = new StylistsController();
+      Stylist testStylist = new Stylist("test stylist1");
+      testStylist.Save();
+      Client testClient = new Client("test client1", "503-XXX-XXXX", testStylist.GetId());
+      testClient.Save();
+
+      //Act
+      ActionResult editView = controller.Edit(testStylist.GetId());
+
+      //Assert
+      Assert.IsInstanceOfType(editView, typeof(ViewResult));
+    }
     //
     // [TestMethod]
     // public void Edit_HasCorrectModelType_Account()

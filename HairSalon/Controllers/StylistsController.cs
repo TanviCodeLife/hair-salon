@@ -44,7 +44,8 @@ namespace HairSalon.Controllers
     public ActionResult Edit(int id)
     {
       Stylist stylist = Stylist.Find(id);
-      return View(stylist);
+      //return View(stylist);
+      return new EmptyResult();
       //return View("null");
     }
 
