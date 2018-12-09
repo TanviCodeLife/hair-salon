@@ -60,7 +60,7 @@ namespace HairSalon.Controllers
     {
       Stylist stylist = Stylist.Find(id);
       stylist.Delete();
-      return RedirectToAction("null");
+      return RedirectToAction("Index");
     }
 
   }
