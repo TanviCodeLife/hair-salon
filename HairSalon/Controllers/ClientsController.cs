@@ -19,8 +19,8 @@ namespace HairSalon.Controllers
     public ActionResult New(int stylistId)
     {
       Stylist stylist = Stylist.Find(stylistId);
-      //return View(stylist);
-      return new EmptyResult();
+      return View(stylist);
+      //return new EmptyResult();
     }
 
   }
