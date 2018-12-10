@@ -150,5 +150,42 @@ namespace HairSalon.Tests
       Assert.IsInstanceOfType(result, typeof(Dictionary<string, object>));
     }
 
+    [TestMethod]
+    public void Update_ReturnsCorrectView_True()
+    {
+      //Arrange
+      ClientsController controller = new ClientsController();
+      Stylist testStylist = new Stylist("test stylist1");
+      testStylist.Save();
+      int stylistId = testStylist.GetId();
+      Client testClient = new Client("test client1", "503-XXX-XXXX", testStylist.GetId());
+      testClient.Save();
+
+      //Act
+      ActionResult updateView = controller.Update(stylistId, testClient.GetClientId(), "test client2", "949-XXX-XXXX");
+
+      //Assert
+      Assert.IsInstanceOfType(updateView, typeof(RedirectToActionResult));
+    }
+
+    [TestMethod]
+    public void Update_HasCorrectActionName_True()
+    {
+      //Arrange
+      ClientsController controller = new ClientsController();
+      Stylist testStylist = new Stylist("test stylist1");
+      testStylist.Save();
+      Client testClient = new Client("test client1", "503-XXX-XXXX", testStylist.GetId());
+      testClient.Save();
+      int stylistId = testStylist.GetId();
+      RedirectToActionResult updateView = controller.Update(stylistId, testClient.GetClientId(), "test client2", "949-XXX-XXXX") as RedirectToActionResult;
+
+      //Act
+      var result = updateView.ActionName;
+
+      //Assert
+      Assert.AreEqual(result, "Show");
+    }
+
   }
 }
