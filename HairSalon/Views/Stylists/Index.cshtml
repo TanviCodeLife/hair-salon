@@ -3,10 +3,24 @@
 }
 
 <div class="container">
-  <div class="jumbotron">
-    <h1 class="display-4">Perfect Look</h1>
-    <img src="~/imgs/HairTools.jpg" alt="Hair Tools" class="jumbotron-image">
-    <p class="lead">Perfect Look Stylists Management</p>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Perfect Look</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home Page</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/stylists/new">Add New Stylist</a>
+      </li>
+    </ul>
+    </div>
+  </nav>
+  <div class="jumbotron jumbotron-fluid">
+    <h3 class="display-4">Perfect Look Stylists Management</h3>
+    <!-- <img src="~/imgs/HairTools.jpg" alt="Hair Tools" class="jumbotron-image"> -->
   </div>
   <br>
   @if (Model.Count == 0)
@@ -30,7 +44,4 @@
       </div>
     }
   </div>
-
-<a class="btn btn-primary" href="/stylists/new" role="button" style="margin-left: 40%">Add New Stylist</a>
-<a class="btn btn-primary" href="/" role="button" style="margin-left: 40%">Home Page!</a>
 </div>

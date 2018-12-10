@@ -6,10 +6,24 @@
   Layout = "_Layout";
 }
 <div class="container">
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Perfect Look</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home Page</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/stylists/@Model.GetId()">Add New Client</a>
+      </li>
+    </ul>
+    </div>
+  </nav>
   <div class="jumbotron">
-    <h1 class="display-4">Perfect Look!</h1>
-    <img src="~/imgs/HairTools.jpg" alt="Hair Tools" class="jumbotron-image">
-    <p class="lead">Perfect Look Stylists Management</p>
+    <h3 class="display-4">Perfect Look Stylists Management</h3>
+    <!-- <img src="~/imgs/HairTools.jpg" alt="Hair Tools" class="jumbotron-image"> -->
   </div>
   <h4 class="align"><strong>Edit Details For</Strong>: @Model.GetName()</h4>
   <form action="/stylists/@Model.GetId()/update" method="post">
@@ -21,5 +35,4 @@
     </div>
     <button type="submit" class="btn-danger">Update Stylist</button>
   </form>
-  <p><a class="btn btn-primary" href="/stylists/@Model.GetId()" role="button">Add a new item</a></p>
 </div>
