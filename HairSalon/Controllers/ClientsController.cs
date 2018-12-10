@@ -44,8 +44,8 @@ namespace HairSalon.Controllers
       model.Add("stylist", stylist);
       Client client = Client.Find(clientId);
       model.Add("client", client);
-      //return View(model);
-      return new EmptyResult();
+      return View(model);
+      //return new EmptyResult();
     }
 
   }
