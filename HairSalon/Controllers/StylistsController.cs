@@ -63,6 +63,20 @@ namespace HairSalon.Controllers
       return RedirectToAction("Index");
     }
 
+    //Http Post Create for Clients used here to reuse stylists controller Show view
+    [HttpPost("/stylists/{stylistId}/clients")]
+    public ActionResult Create(int stylistId, string clientName, string clientPhone)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Stylist foundStylist = Stylist.Find(stylistId);
+      Client newClient = new Client(clientName, clientPhone, stylistId);
+      newClient.Save();
+      List<Client> stylistClients = foundStylist.GetClients();
+      model.Add("clients", stylistClients);
+      model.Add("stylist", foundStylist);
+      return RedirectToAction("Show");
+    }
+
   }
 
 }
