@@ -1,0 +1,25 @@
+
+@using HairSalon.Models
+@model Stylist
+
+@{
+  Layout = "_Layout";
+}
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Perfect Look!</h1>
+    <img src="~/imgs/HairTools.jpg" alt="Hair Tools" class="jumbotron-image">
+    <p class="lead">Perfect Look Stylists Management</p>
+  </div>
+  <h4 class="align"><strong>Edit Details For</Strong>: @Model.GetName()</h4>
+  <form action="/stylists/@Model.GetId()/update" method="post">
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="name">Stylist New Name:</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Firstname Lastname" required>
+      </div>
+    </div>
+    <button type="submit" class="btn-danger">Update Stylist</button>
+  </form>
+  <p><a class="btn btn-primary" href="/stylists/@Model.GetId()" role="button">Add a new item</a></p>
+</div>

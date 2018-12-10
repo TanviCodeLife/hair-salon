@@ -5,27 +5,31 @@
 <div class="container">
   <div class="jumbotron">
     <h1 class="display-4">Perfect Look!</h1>
-    <img src="~/img/HairTools.jpg" alt="Hair Tools" class="jumbotron-image">
+    <img src="~/imgs/HairTools.jpg" alt="Hair Tools" class="jumbotron-image">
     <p class="lead">Perfect Look Stylists Management</p>
   </div>
-  <p class="align">Stylist @Model["stylist"].GetName()'s Clients</p>
+  <h4 class="align"><strong>Stylist</Strong>: @Model["stylist"].GetName()'s Clients</h4>
 
-  <div>
-    <a href="/stylists/@Model["stylist"].GetId/edit" class="btn btn-warning" role="button">Edit</a>
+  <div id="make-inline">
+    <a href="/stylists/@Model["stylist"].GetId()/edit" class="btn btn-outline-danger btn-sm" role="button">Edit Details</a>
+
     <p>OR</p>
-    <form action="/stylists/@Model["stylist"].GetId/delete" method="post">
-      <button type="submit" class="btn btn-danger">Delete</button>
-    </form><a href="/stylists/@Model["stylist"].GetId/delete" class="btn btn-info" role="button">Edit</a>
+
+    <form action="/stylists/@Model["stylist"].GetId()/delete" method="post">
+      <button type="submit" class="btn-outline-danger btn-sm">Delete Stylist</button>
+    </form>
   </div>
 
   <ul>
-    @foreach (var client in @Model["clients"]
+    @foreach (var client in @Model["clients"])
     {
       <li><a class="btn btn-primary" role="button" href="stylists/@Model["stylist"].GetId()/clients/@client.GetGetClientId">@client.GetClientName()</a></li>
     }
   </ul>
 
-<p><a class="btn btn-primary" href="/stylists/@Model["stylist"].GetId()/clients/new" role="button">Add a new item</a></p>
-<p><a class="btn btn-primary" href="/stylists" role="button">List All Stylists</a></p>
-<a class="btn btn-primary" href="/" role="button" style="margin-left: 40%">Home Page!</a>
+  <div id="make-inline">
+    <p><a class="btn btn-primary" href="/stylists/@Model["stylist"].GetId()/clients/new" role="button">Add a new item</a></p>
+    <p><a class="btn btn-primary" href="/stylists" role="button">List All Stylists</a></p>
+    <a class="btn btn-primary" href="/" role="button" style="margin-left: 40%">Home Page!</a>
+  </div>
 </div>

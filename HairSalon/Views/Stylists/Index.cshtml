@@ -5,7 +5,7 @@
 <div class="container">
   <div class="jumbotron">
     <h1 class="display-4">Perfect Look</h1>
-    <img src="~/img/HairTools.jpg" alt="Hair Tools" class="jumbotron-image">
+    <img src="~/imgs/HairTools.jpg" alt="Hair Tools" class="jumbotron-image">
     <p class="lead">Perfect Look Stylists Management</p>
   </div>
   <br>
@@ -13,8 +13,10 @@
   {
     <p class="align">No Stylist In Database! Start by Adding one.</p>
   }
-
-  <p class="align">All Stylists in Salon Database.</p>
+  else
+  {
+    <p class="align">All Stylists in Salon Database.</p>
+  }
 
   <div class="row">
   @foreach (var stylist in Model)
