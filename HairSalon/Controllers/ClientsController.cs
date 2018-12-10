@@ -61,13 +61,17 @@ namespace HairSalon.Controllers
       //return new EmptyResult();
     }
 
-    // [HttpPost("stylists/{stylistId}/clients/{clientId}")]
-    // public ActionResult Delete(int id)
-    // {
-    //   Client client = Client.Find(id);
-    //   client.Delete();
-    //   return RedirectToAction("Index");
-    // }
+    [HttpPost("stylists/{stylistId}/clients/{clientId}")]
+    public ActionResult Delete(int stylistId, int id)
+    {
+      Client client = Client.Find(id);
+      client.Delete();
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Stylist stylist = Stylist.Find(stylistId);
+      model.Add("stylist", stylist);
+      model.Add("client", client);
+      return RedirectToAction("Show");
+    }
 
   }
 }

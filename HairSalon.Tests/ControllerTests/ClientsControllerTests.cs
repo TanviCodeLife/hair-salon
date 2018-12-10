@@ -187,5 +187,43 @@ namespace HairSalon.Tests
       Assert.AreEqual(result, "Show");
     }
 
+    [TestMethod]
+    public void Delete_ReturnsCorrectView_True()
+    {
+      //Arrange
+      ClientsController controller = new ClientsController();
+      Stylist testStylist = new Stylist("test stylist1");
+      testStylist.Save();
+      int stylistId = testStylist.GetId();
+      Client testClient = new Client("test client1", "503-XXX-XXXX", testStylist.GetId());
+      testClient.Save();
+
+      //Act
+      ActionResult deleteView = controller.Delete(stylistId, testClient.GetClientId());
+
+      //Assert
+      Assert.IsInstanceOfType(deleteView, typeof(RedirectToActionResult));
+    }
+
+    [TestMethod]
+    public void Delete_HasCorrectActionName_True()
+    {
+      //Arrange
+      ClientsController controller = new ClientsController();
+      Stylist testStylist = new Stylist("test stylist1");
+      testStylist.Save();
+      Client testClient = new Client("test client1", "503-XXX-XXXX", testStylist.GetId());
+      testClient.Save();
+      int stylistId = testStylist.GetId();
+      RedirectToActionResult deleteView = controller.Delete(stylistId, testClient.GetClientId()) as RedirectToActionResult;
+
+      //Act
+      var result = deleteView.ActionName;
+
+      //Assert
+      Assert.AreEqual(result, "Show");
+    }
+
+
   }
 }
