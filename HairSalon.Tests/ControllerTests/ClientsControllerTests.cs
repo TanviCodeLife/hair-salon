@@ -78,5 +78,42 @@ namespace HairSalon.Tests
       Assert.IsInstanceOfType(result, typeof(Stylist));
     }
 
+    [TestMethod]
+    public void Show_ReturnsCorrectView_True()
+    {
+      //Arrange
+      ClientsController controller = new ClientsController();
+      Stylist testStylist = new Stylist("test stylist1");
+      testStylist.Save();
+      int stylistId = testStylist.GetId();
+      Client testClient = new Client("test client1", "503-XXX-XXXX", testStylist.GetId());
+      testClient.Save();
+
+      //Act
+      ActionResult showView = controller.Show(stylistId, testClient.GetClientId());
+
+      //Assert
+      Assert.IsInstanceOfType(showView, typeof(ViewResult));
+    }
+
+    [TestMethod]
+    public void Show_HasCorrectModelType_Dictionary()
+    {
+      //Arrange
+      ClientsController controller = new ClientsController();
+      Stylist testStylist = new Stylist("test stylist1");
+      testStylist.Save();
+      Client testClient = new Client("test client1", "503-XXX-XXXX", testStylist.GetId());
+      testClient.Save();
+      int stylistId = testStylist.GetId();
+      ViewResult showView = controller.Show(stylistId, testClient.GetClientId()) as ViewResult;
+
+      //Act
+      var result = showView.ViewData.Model;
+
+      //Assert
+      Assert.IsInstanceOfType(result, typeof(Dictionary<string, object>));
+    }
+
   }
 }
