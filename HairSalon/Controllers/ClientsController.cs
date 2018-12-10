@@ -57,8 +57,8 @@ namespace HairSalon.Controllers
       Stylist stylist = Stylist.Find(stylistId);
       model.Add("stylist", stylist);
       model.Add("client", client);
-      //return RedirectToAction("Show");
-      return new EmptyResult();
+      return RedirectToAction("Show");
+      //return new EmptyResult();
     }
 
     // [HttpPost("stylists/{stylistId}/clients/{clientId}")]
