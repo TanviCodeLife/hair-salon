@@ -28,13 +28,13 @@
   </div>
   <h4 class="element-align"><strong>Stylist</strong>: @Model["stylist"].GetName()'s Clients</h4>
 
-  <div class="inline-button">
-    <a href="/stylists/@Model["stylist"].GetId()/edit" class="btn btn-danger btn-sm" role="button">Edit Details</a>
+  <div class="style-inline">
+    <a href="/stylists/@Model["stylist"].GetId()/edit" class="btn btn-danger btn-lg" role="button">Edit Details</a>
 
-    <p>OR</p>
+    <h5 style="margin-top: 8px; margin-left: 3px; margin-right: 3px;">OR</h5>
 
     <form action="/stylists/@Model["stylist"].GetId()/delete" method="post">
-      <button type="submit" class="btn-danger btn-sm">Delete Stylist</button>
+      <button type="submit" class="btn-danger btn-lg">Delete Stylist</button>
     </form>
   </div>
 
