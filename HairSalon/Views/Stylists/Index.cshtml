@@ -19,19 +19,17 @@
     </div>
   </nav>
   <div class="jumbotron jumbotron-fluid">
-    <h3 class="display-4">Perfect Look Stylists Management</h3>
-    <!-- <img src="~/imgs/HairTools.jpg" alt="Hair Tools" class="jumbotron-image"> -->
+    <h4 class="display-4">Perfect Look Database Management</h4>
+    <p class="lead">View All Stylists Here.</p>
+    <img src="~/imgs/HairTools.jpg" alt="Hair Tools" class="jumbotron-image">
   </div>
   <br>
   @if (Model.Count == 0)
   {
-    <p class="align">No Stylist In Database! Start by Adding one.</p>
-  }
-  else
-  {
-    <p class="align">All Stylists in Salon Database.</p>
+    <p class="element-align">No Stylist In Database! Start by Adding one.</p>
   }
 
+  <br>
   <div class="row">
   @foreach (var stylist in Model)
     {

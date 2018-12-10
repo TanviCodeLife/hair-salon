@@ -22,18 +22,19 @@
     </div>
   </nav>
   <div class="jumbotron">
-    <h3 class="display-4">Perfect Look Stylists Management</h3>
-    <!-- <img src="~/imgs/HairTools.jpg" alt="Hair Tools" class="jumbotron-image"> -->
+    <h4 class="display-4">Perfect Look Database Management</h4>
+    <p class="lead">View and Modify Stylist Details.</p>
+    <img src="~/imgs/HairTools.jpg" alt="Hair Tools" class="jumbotron-image">
   </div>
-  <h4 class="align"><strong>Stylist</Strong>: @Model["stylist"].GetName()'s Clients</h4>
+  <h4 class="element-align"><strong>Stylist</strong>: @Model["stylist"].GetName()'s Clients</h4>
 
-  <div id="make-inline">
-    <a href="/stylists/@Model["stylist"].GetId()/edit" class="btn btn-outline-danger btn-sm" role="button">Edit Details</a>
+  <div class="inline-button">
+    <a href="/stylists/@Model["stylist"].GetId()/edit" class="btn btn-danger btn-sm" role="button">Edit Details</a>
 
     <p>OR</p>
 
     <form action="/stylists/@Model["stylist"].GetId()/delete" method="post">
-      <button type="submit" class="btn-outline-danger btn-sm">Delete Stylist</button>
+      <button type="submit" class="btn-danger btn-sm">Delete Stylist</button>
     </form>
   </div>
 

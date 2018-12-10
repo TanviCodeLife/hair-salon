@@ -6,3 +6,16 @@
   width: 100%;
   max-width: 816px;
 }
+
+.display-4, .lead, .element-align, .card-title{
+text-align: center;
+}
+
+/*.lead{
+color: 5px;
+}*/
+
+.inline-button{
+  display: flex;
+  justify-content: center; 
+}
