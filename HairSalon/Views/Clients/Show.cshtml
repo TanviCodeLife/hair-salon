@@ -1,0 +1,41 @@
+@{
+  Layout = "_Layout";
+}
+@using HairSalon.Models
+<div class="container">
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Perfect Look</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home Page</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/stylists/@Model["stylist"].GetId()/clients/new">Add New Client</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/clients">List All Clients</a>
+      </li>
+    </ul>
+    </div>
+  </nav>
+  <div class="jumbotron">
+    <h4 class="display-4">Perfect Look Database Management</h4>
+    <p class="lead">View and Modify Client Details.</p>
+    <img src="~/imgs/HairTools.jpg" alt="Hair Tools" class="jumbotron-image">
+  </div>
+  <h4 class="element-align"><strong>Stylist</strong>: @Model["stylist"].GetName()'s Client</h4>
+      <h5 class="element-align"><strong>Client</strong>: @Model["client"].GetClientName()</h5>
+      <h5 class="element-align"><strong>Phone Number</strong>: @Model["client"].GetClientPhone()</h5>
+      <div class="style-inline">
+        <a href="/stylists/@Model["stylist"].GetId()/clients/@Model["client"].GetClientId()/edit" class="btn btn-danger btn-lg" role="button">Edit Details</a>
+
+        <h5 style="margin-top: 8px; margin-left: 3px; margin-right: 3px;">OR</h5>
+
+        <form action="/stylists/@Model["stylist"].GetId()/@Model["client"].GetClientId()" method="post">
+          <button type="submit" class="btn-danger btn-lg">Delete Client</button>
+        </form>
+      </div>
+</div>

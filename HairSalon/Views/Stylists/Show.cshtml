@@ -6,42 +6,42 @@
   <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
     <a class="navbar-brand" href="/">Perfect Look</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="/">Home Page</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/stylists/@Model["stylist"].GetId()/clients/new">Add Client</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/stylists">List All Stylists</a>
-      </li>
-    </ul>
+      <span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home Page</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/stylists/@Model["stylist"].GetId()/clients/new">Add Client</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/stylists">List All Stylists</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="jumbotron">
+      <h4 class="display-4">Perfect Look Database Management</h4>
+      <p class="lead">View and Modify Stylist Details.</p>
+      <img src="~/imgs/HairTools.jpg" alt="Hair Tools" class="jumbotron-image">
     </div>
-  </nav>
-  <div class="jumbotron">
-    <h4 class="display-4">Perfect Look Database Management</h4>
-    <p class="lead">View and Modify Stylist Details.</p>
-    <img src="~/imgs/HairTools.jpg" alt="Hair Tools" class="jumbotron-image">
+    <h4 class="element-align"><strong>Stylist</strong>: @Model["stylist"].GetName()'s Clients</h4>
+
+    <div class="style-inline">
+      <a href="/stylists/@Model["stylist"].GetId()/edit" class="btn btn-danger btn-lg" role="button">Edit Details</a>
+
+      <h5 style="margin-top: 8px; margin-left: 3px; margin-right: 3px;">OR</h5>
+
+      <form action="/stylists/@Model["stylist"].GetId()/delete" method="post">
+        <button type="submit" class="btn-danger btn-lg">Delete Client</button>
+      </form>
+    </div>
+    <ul>
+      @foreach (var client in @Model["clients"])
+      {
+        <li><a class="btn btn-primary" role="button" href="/stylists/@Model["stylist"].GetId()/clients/@client.GetClientId()">@client.GetClientName()</a></li>
+        <br>
+      }
+    </ul>
   </div>
-  <h4 class="element-align"><strong>Stylist</strong>: @Model["stylist"].GetName()'s Clients</h4>
-
-  <div class="style-inline">
-    <a href="/stylists/@Model["stylist"].GetId()/edit" class="btn btn-danger btn-lg" role="button">Edit Details</a>
-
-    <h5 style="margin-top: 8px; margin-left: 3px; margin-right: 3px;">OR</h5>
-
-    <form action="/stylists/@Model["stylist"].GetId()/delete" method="post">
-      <button type="submit" class="btn-danger btn-lg">Delete Stylist</button>
-    </form>
-  </div>
-
-  <ul>
-    @foreach (var client in @Model["clients"])
-    {
-      <li><a class="btn btn-primary" role="button" href="stylists/@Model["stylist"].GetId()/clients/@client.GetGetClientId">@client.GetClientName()</a></li>
-    }
-  </ul>
-</div>

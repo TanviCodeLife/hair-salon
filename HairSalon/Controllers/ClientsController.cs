@@ -22,9 +22,9 @@ namespace HairSalon.Controllers
       return View(stylist);
     }
 
-    //Creat in Stylists Controller to resuse Show View
+    //Create in Stylists Controller to resuse Show View
 
-    [HttpGet("/stylists/{stylistId}/client/{clientId}")]
+    [HttpGet("/stylists/{stylistId}/clients/{clientId}")]
     public ActionResult Show(int stylistId, int clientId)
     {
       Client client = Client.Find(clientId);
@@ -33,7 +33,6 @@ namespace HairSalon.Controllers
       model.Add("client", client);
       model.Add("stylist", stylist);
       return View(model);
-
     }
 
     [HttpGet("/stylists/{stylistId}/clients/{clientId}/edit")]
@@ -45,7 +44,6 @@ namespace HairSalon.Controllers
       Client client = Client.Find(clientId);
       model.Add("client", client);
       return View(model);
-      //return new EmptyResult();
     }
 
     [HttpPost("/stylists/{stylistId}/clients/{clientId}")]
@@ -58,7 +56,6 @@ namespace HairSalon.Controllers
       model.Add("stylist", stylist);
       model.Add("client", client);
       return RedirectToAction("Show");
-      //return new EmptyResult();
     }
 
     [HttpPost("stylists/{stylistId}/clients/{clientId}")]

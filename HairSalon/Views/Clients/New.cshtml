@@ -1,0 +1,43 @@
+
+@using HairSalon.Models
+@model Stylist
+
+@{
+  Layout = "_Layout";
+}
+
+<div class="container">
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Perfect Look</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home Page</a>
+      </li>
+    </ul>
+    </div>
+  </nav>
+  <div class="jumbotron">
+    <h4 class="display-4">Perfect Look Database Management</h4>
+    <p class="lead">Enter New Client Name and Phone Number</p>
+    <img src="~/imgs/HairTools.jpg" alt="Hair Tools" class="jumbotron-image">
+  </div>
+  <h4 class="element-align">Add A New Client To<strong>Stylist</strong>:@Model.GetName()</h4>
+    <form action="/stylists/@Model.GetId()/clients" method="post">
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="clientName">Enter Client Name:</label>
+          <input type="text" class="form-control" id="clientName" name="clientName" placeholder="Firstname Lastname" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="clientPhone">Enter Client Phone:</label>
+          <input type="text" class="form-control" id="clientPhone" name="clientPhone" placeholder="503-XXX-XXXX" required>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" style="margin-left: 45%">Add Client!</button>
+    </form>
+  </div>
