@@ -32,8 +32,8 @@ namespace HairSalon.Controllers
       Stylist stylist = Stylist.Find(stylistId);
       model.Add("client", client);
       model.Add("stylist", stylist);
-      //return View(model);
-      return new EmptyResult();
+      return View(model);
+      //return new EmptyResult();
     }
 
   }
