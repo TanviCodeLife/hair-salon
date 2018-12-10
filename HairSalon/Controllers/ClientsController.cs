@@ -11,8 +11,8 @@ namespace HairSalon.Controllers
     [HttpGet("/clients")]
     public ActionResult Index()
     {
-      List<Client> allclients = Client.GetAll();
-      return View(0);
+      List<Client> allClients = Client.GetAll();
+      return View(allClients);
       //return new EmptyResult();
     }
 
