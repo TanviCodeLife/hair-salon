@@ -67,9 +67,9 @@ namespace HairSalon.Tests
     public void New_HasCorrectModelType_Stylist()
     {
       //Arrange
-      ViewResult newView = new ClientsController().Index() as ViewResult;
       Stylist testStylist = new Stylist("test stylist1");
       testStylist.Save();
+      ViewResult newView = new ClientsController().New(testStylist.GetId()) as ViewResult;
 
       //Act
       var result = newView.ViewData.Model;
