@@ -15,13 +15,11 @@
 * _Salon employee should be able to add new clients to a specific stylist._
 * _Salon employee should not be able to add a client if no stylists have been added._
 ### Specs For Optional Functionality
-* _Salon employee should be able to delete (individual and all) stylists._
-* _Salon employee should be able to delete (individual and all) clients._
-* _Salon employee should be able to enter stylist name into form where employees may search for the stylist. It should display a list of all results._
-* _Salon employee should be able to enter client's name into form where employees may search for the client's. It should display a list of all results._
+* _Salon employee should be able to delete individual stylists._
+* _Salon employee should be able to delete individual clients._
 
 
-## Database Setup
+## Database Setup using SQL commands
 * _Production Database: `tanvi_garg.sql`_
 * _Test Database: `tanvi_garg_test.sql`_
 * _Tables in Database: stylists (columns: id, name) and clients (id, name, phone, stylist_id(foreign key))_
@@ -48,7 +46,7 @@
 1. _Download and install .Net Core 1.1.4_
 2. _Download and install Mono_
 3. _Download and install MAMP 4.5_
-4. _Go to GitHub profile and clone the repo from [TanviCodeLife](https://github.com/TanviCodeLife/word-counter-csharp-proj). Use `git clone <project url>` command to pull it to a local repository in your Home directory._
+4. _Go to GitHub profile and clone the repo from [TanviCodeLife](https://github.com/TanviCodeLife/hair-salon.git). Use `git clone <project url>` command to pull it to a local repository in your Home directory._
 5. _Open MAMP and start the Apache and MySql servers_
 6. _Navigate to MAMP > Tools > phpMyAdmin and import the tanvi_garg.sql file to create the database_
 7. _Navigate to MAMP > Tools > phpMyAdmin and import the tanvi_garg_test.sql file to create the test database_

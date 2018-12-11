@@ -67,6 +67,7 @@ Test Database: first_last_test.sql. Here tanvi_garg_test.sql
  * Parent Logic: `ProjectName>Models>ParentClassName.cs`
  * ParentTests Logic Tests: `ProjectName.Tests>ModelTests>ParentClassNameTests.cs`
 
+
  ##### Constructor -
 `public Stylist(string stylistName, int id = 0)`
 `{`
@@ -76,9 +77,8 @@ Test Database: first_last_test.sql. Here tanvi_garg_test.sql
 `_clients = new List<Client>{};`
 `}`
 
- ##### Parent Getter/Setter Methods -
+ ##### Parent Getter Methods -
  * GetName()
- * SetName()
  * GetId()
 
  ##### Parent Maintenance Methods -
@@ -94,6 +94,8 @@ Test Database: first_last_test.sql. Here tanvi_garg_test.sql
  * Edit()
  * Delete()
 
+
+
  ****
 2. ### Controllers and Controller Tests :
   * Stylist - Parent Class
@@ -103,8 +105,19 @@ Test Database: first_last_test.sql. Here tanvi_garg_test.sql
   * Child Controller - Location:`ProjectName>Controllers>ChildClassNameController.cs`
   * Parent Controller Test - Location:`ProjectName.Tests>ControllersTests>ParentClassNameControllerTest.cs`
   * Child Controller Test - Location:`ProjectName.Tests>ControllersTests>ChildClassNameControllerTest.cs`
+  * Controller Routes Return Types and Their Tests:
+
+  * | Return Type        | Test Purpose           
+  | ------------- |:-------------:|
+  | View("Route")      | Check If ReturnsCorrectView |
+  |      | Check If HasCorrectModelType      |   
+  | View() | Check If ReturnsCorrectView      |
+  | RedirectToAction("Route")      | Check If ReturnsCorrectView |
+  |      | Check If ReturnsCorrectActionName      |  
+  | View("Route", object)      | Check If ReturnsCorrectView |
+  |      | HasCorrectViewName      |  
+  |       | Check If HasCorrectModelType |
+
 
   * Controller Routes and URLs with their corresponding views are based on Restful Routing
-  * ![Visual Of Restful Routing Via Controllers](/HairSalon/wwwroot/imgs/Restful.png)
-
-  * Controller Tests:
+   ![Visual Of Restful Routing Via Controllers](/HairSalon/wwwroot/imgs/Restful.png)
