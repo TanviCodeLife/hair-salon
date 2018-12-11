@@ -104,7 +104,7 @@
 `}`
 ##### Parent Methods and Their Tests:
 
-| Method Name        | Test Purpose |  Method Type            |
+| Method Name        | Test Purpose |  Method Type|
 |: ------------- :|:-------------:|:-------------:|
 |     Parent Constructor             |        Check If Creates Instance Of Parent      |       Parent Instance Constructor        |
 |  GetName()      | Check If Returns Parent Name |   Getter Method  |
