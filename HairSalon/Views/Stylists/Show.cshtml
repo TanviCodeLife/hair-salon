@@ -37,6 +37,11 @@
         <button type="submit" class="btn-danger btn-lg">Delete Stylist</button>
       </form>
     </div>
+    <br>
+    @if (@Model["clients"].Count == 0)
+    {
+      <p class="element-align"><strong>No Client For @Model["stylist"].GetName() in Database! Add Client To This Stylist.<strong></p>
+    }
     <ul>
       @foreach (var client in @Model["clients"])
       {

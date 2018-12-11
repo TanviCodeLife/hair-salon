@@ -13,7 +13,7 @@
         <a class="nav-link" href="/">Home Page</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/stylists/new">Add New Stylists</a>
+        <a class="nav-link" href="/stylists">All Stylists</a>
       </li>
     </ul>
     </div>
@@ -24,9 +24,9 @@
     <img src="~/imgs/HairTools.jpg" alt="Hair Tools" class="jumbotron-image">
   </div>
   <br>
-  @if (Model.Count == 0)
+  @if (@Model.Count == 0)
   {
-    <p class="element-align">No Client In Database! Start by Adding one.</p>
+    <p class="element-align"><strong>No Client In Database! See All Stylists and Create Client For Preferred Stylist.</strong></p>
   }
 
   <br>

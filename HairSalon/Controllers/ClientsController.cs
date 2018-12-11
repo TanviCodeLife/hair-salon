@@ -53,8 +53,8 @@ namespace HairSalon.Controllers
       client.Edit(newName, newPhone);
       Dictionary<string, object> model = new Dictionary<string, object>();
       Stylist stylist = Stylist.Find(stylistId);
-      model.Add("client", client);
       model.Add("stylist", stylist);
+      model.Add("client", client);
       return RedirectToAction("Show");
     }
 
@@ -63,11 +63,7 @@ namespace HairSalon.Controllers
     {
       Client client = Client.Find(clientId);
       client.Delete();
-      Dictionary<string, object> model = new Dictionary<string, object>();
-      Stylist stylist = Stylist.Find(stylistId);
-      model.Add("client", client);
-      model.Add("stylist", stylist);
-      return RedirectToAction("Show");
+      return RedirectToAction("Index");
     }
 
   }

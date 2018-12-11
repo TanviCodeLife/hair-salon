@@ -41,22 +41,6 @@ namespace HairSalon.Tests
     }
 
     [TestMethod]
-    public void SetClientName_SetClientName_String()
-    {
-      //Arrange
-      string clientName = "test client";
-      Client testClient = new Client(clientName, "test-phone", 1);
-
-      //Act
-      string newClientName = "test client 2";
-      testClient.SetClientName(newClientName);
-      string resultName = testClient.GetClientName();
-
-      //Assert
-      Assert.AreEqual(newClientName, resultName);
-    }
-
-    [TestMethod]
     public void GetClientPhone_ReturnsClientPhoneNumber_String()
     {
       //Arrange
@@ -68,22 +52,6 @@ namespace HairSalon.Tests
 
       //Assert
       Assert.AreEqual(clientPhone, resultPhone);
-    }
-
-    [TestMethod]
-    public void SetClientPhone_SetClientPhone_String()
-    {
-      //Arrange
-      string clientPhone = "503-XXX-XXXX";
-      Client testClient = new Client("testname", clientPhone, 1);
-
-      //Act
-      string newClientPhone = "949-XXX-XXXX";
-      testClient.SetClientPhone(newClientPhone);
-      string resultPhone = testClient.GetClientPhone();
-
-      //Assert
-      Assert.AreEqual(newClientPhone, resultPhone);
     }
 
     [TestMethod]

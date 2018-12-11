@@ -73,20 +73,6 @@ namespace HairSalon.Tests
       Assert.IsInstanceOfType(create, typeof(RedirectToActionResult));
     }
 
-    // [TestMethod] - used when return View("Index", allStylists); is used
-    // public void Create_HasCorrectModelType_StylistList()
-    // {
-    //   //Arrange
-    //   ViewResult create = new StylistsController().Create("test name1") as ViewResult;
-    //
-    //   //Act
-    //   var result = create.ViewData.Model;
-    //
-    //   //Assert
-    //   Assert.IsInstanceOfType(result, typeof(List<Stylist>));
-    // }
-    //
-
     [TestMethod]
     public void Create_ReturnsCorrectActionName_True()
     {
@@ -243,26 +229,45 @@ namespace HairSalon.Tests
       ActionResult create = controller.Create(testStylist.GetId(), testClient.GetClientName(), testClient.GetClientPhone());
 
       //Assert
-      Assert.IsInstanceOfType(create, typeof(RedirectToActionResult));
+      Assert.IsInstanceOfType(create, typeof(ViewResult));
     }
 
     [TestMethod]
-    public void CreateClient_HasCorrectActionName_Dictionary()
+    public void CreateClient_HasCorrectModelType_Dictionary()
     {
       //Arrange
-      StylistsController controller = new StylistsController();
-      Stylist testStylist = new Stylist("test stylist1");
-      testStylist.Save();
-      Client testClient = new Client("test client1", "503-XXX-XXXX", testStylist.GetId());
-      testClient.Save();
-      RedirectToActionResult createView = controller.Create(testStylist.GetId(), testClient.GetClientName(), testClient.GetClientPhone()) as RedirectToActionResult;
+        StylistsController controller = new StylistsController();
+        Stylist testStylist = new Stylist("test stylist1");
+        testStylist.Save();
+        Client testClient = new Client("test client1", "503-XXX-XXXX", testStylist.GetId());
+        testClient.Save();
+        ViewResult createView = controller.Create(testStylist.GetId(), testClient.GetClientName(), testClient.GetClientPhone()) as ViewResult;
 
       //Act
-      var result = createView.ActionName;
+      var result = createView.ViewData.Model;
+
+      //Assert
+      Assert.IsInstanceOfType(result, typeof(Dictionary<string, object>));
+    }
+
+    [TestMethod]
+    public void CreateClient_HasCorrectViewName_Show()
+    {
+      //Arrange
+        StylistsController controller = new StylistsController();
+        Stylist testStylist = new Stylist("test stylist1");
+        testStylist.Save();
+        Client testClient = new Client("test client1", "503-XXX-XXXX", testStylist.GetId());
+        testClient.Save();
+        ViewResult createView = controller.Create(testStylist.GetId(), testClient.GetClientName(), testClient.GetClientPhone()) as ViewResult;
+
+      //Act
+      var result = createView.ViewName;
 
       //Assert
       Assert.AreEqual(result, "Show");
     }
+
 
   }
 }

@@ -221,7 +221,7 @@ namespace HairSalon.Tests
       var result = deleteView.ActionName;
 
       //Assert
-      Assert.AreEqual(result, "Show");
+      Assert.AreEqual(result, "Index");
     }
 
 
