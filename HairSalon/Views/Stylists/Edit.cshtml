@@ -1,7 +1,8 @@
 @{
   Layout = "_Layout";
 }
-using @Models
+@using HairSalon.Models
+@model Stylist
 <div class="container">
   <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
     <a class="navbar-brand" href="/">Perfect Look</a>
@@ -13,31 +14,25 @@ using @Models
         <a class="nav-link" href="/">Home Page</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/stylists/@Model["stylist"].GetId()">Add New Client For @Model["stylist"].GetName()</a>
+        <a class="nav-link" href="/stylists/@Model.GetId()">Add New Client</a>
       </li>
     </ul>
     </div>
   </nav>
   <div class="jumbotron">
     <h4 class="display-4">Perfect Look Database Management</h4>
-    <p class="lead">Modify Client Details</p>
+    <p class="lead">Modify Stylist Name</p>
     <img src="~/imgs/HairTools.jpg" alt="Hair Tools" class="jumbotron-image">
   </div>
-  <h4><strong>Edit Details For</Strong>: @Model["client"].GetClientName()</h4>
-  <form action="/stylists/@Model["stylist"].GetId()/clients/@Model["client"].GetClientId()" method="post">
+  <h4 class="align"><strong>Edit Details For</Strong>: @Model.GetName()</h4>
+  <form action="/stylists/@Model.GetId()/update" method="post">
     <div class="form-row">
       <div class="form-group col-md-12">
-        <label for="newName">Client New Name:</label>
-        <input type="text" class="form-control" id="newName" name="newName" placeholder="Firstname Lastname" required>
+        <label for="name">Stylist New Name:</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Firstname Lastname" required>
       </div>
     </div>
-    <div class="form-row">
-      <div class="form-group col-md-12">
-        <label for="newPhone">Client New Phone Number:</label>
-        <input type="text" class="form-control" id="newPhone" name="newPhone" placeholder="XXX-XXX-XXXX" required>
-      </div>
-    </div>
-    <button type="submit" class="btn btn-danger btn-md">Update Client</button>
+    <button type="submit" class="btn btn-danger btn-md">Update Stylist</button>
   </form>
 </div>
 <br>

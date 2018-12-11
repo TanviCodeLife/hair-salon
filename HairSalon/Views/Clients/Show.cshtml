@@ -34,8 +34,9 @@
 
         <h5 style="margin-top: 8px; margin-left: 3px; margin-right: 3px;">OR</h5>
 
-        <form action="/stylists/@Model["stylist"].GetId()/@Model["client"].GetClientId()" method="post">
+        <form action="/stylists/@Model["stylist"].GetId()/clients/@Model["client"].GetClientId()/delete" method="post">
           <button type="submit" class="btn-danger btn-lg">Delete Client</button>
         </form>
       </div>
 </div>
+<br>

@@ -26,7 +26,7 @@
       <p class="lead">View and Modify Stylist Details.</p>
       <img src="~/imgs/HairTools.jpg" alt="Hair Tools" class="jumbotron-image">
     </div>
-    <h4 class="element-align"><strong>Stylist</strong>: @Model["stylist"].GetName()'s Clients</h4>
+    <h4 class="element-align"><strong>Stylist: </strong>@Model["stylist"].GetName()'s Clients</h4>
 
     <div class="style-inline">
       <a href="/stylists/@Model["stylist"].GetId()/edit" class="btn btn-danger btn-lg" role="button">Edit Details</a>
@@ -34,7 +34,7 @@
       <h5 style="margin-top: 8px; margin-left: 3px; margin-right: 3px;">OR</h5>
 
       <form action="/stylists/@Model["stylist"].GetId()/delete" method="post">
-        <button type="submit" class="btn-danger btn-lg">Delete Client</button>
+        <button type="submit" class="btn-danger btn-lg">Delete Stylist</button>
       </form>
     </div>
     <ul>

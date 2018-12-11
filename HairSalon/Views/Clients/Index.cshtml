@@ -13,7 +13,7 @@
         <a class="nav-link" href="/">Home Page</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/stylists/new">Add New Client</a>
+        <a class="nav-link" href="/stylists/new">Add New Stylists</a>
       </li>
     </ul>
     </div>
@@ -31,13 +31,13 @@
 
   <br>
   <div class="row">
-  @foreach (var clients in Model)
+  @foreach (var client in Model)
     {
       <div class="col-sm-6">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title"><a href='/clients/@client.GetClientId()'>@client.GetClientName()</a></h5>
             <h5 class="card-title">@client.GetClientName()</h5>
+            <h5 class="card-title">@client.GetClientPhone()</h5>
           </div>
         </div>
       </div>

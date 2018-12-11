@@ -53,20 +53,20 @@ namespace HairSalon.Controllers
       client.Edit(newName, newPhone);
       Dictionary<string, object> model = new Dictionary<string, object>();
       Stylist stylist = Stylist.Find(stylistId);
-      model.Add("stylist", stylist);
       model.Add("client", client);
+      model.Add("stylist", stylist);
       return RedirectToAction("Show");
     }
 
-    [HttpPost("stylists/{stylistId}/clients/{clientId}")]
-    public ActionResult Delete(int stylistId, int id)
+    [HttpPost("stylists/{stylistId}/clients/{clientId}/delete")]
+    public ActionResult Delete(int stylistId, int clientId)
     {
-      Client client = Client.Find(id);
+      Client client = Client.Find(clientId);
       client.Delete();
       Dictionary<string, object> model = new Dictionary<string, object>();
       Stylist stylist = Stylist.Find(stylistId);
-      model.Add("stylist", stylist);
       model.Add("client", client);
+      model.Add("stylist", stylist);
       return RedirectToAction("Show");
     }
 
