@@ -28,7 +28,7 @@ namespace HairSalon.Tests
     }
 
     [TestMethod]
-    public void GetName_ReturnsStylistame_String()
+    public void GetName_ReturnsStylistName_String()
     {
       //Arrange
       string name = "test stylist";
